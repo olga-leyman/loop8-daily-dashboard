@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loop8 · daily stats</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <strong>Loop8</strong>
+      <a class="active" href="index.html">Daily dashboard</a>
+      <a href="report.html">Sep 10–14 report</a>
+    </nav>
+    <h1>Daily dashboard</h1>
+    <p class="sub" id="meta">Loading…</p>
+    <div class="stats" id="stats"></div>
+    <h2>Last 5 days</h2>
+    <div class="bars" id="bars"></div>
+    <div class="bar-label" id="bar-labels"></div>
+    <table id="daily"></table>
+    <h2>Of new accounts this window</h2>
+    <table id="funnel"></table>
+    <h2>Live email and push</h2>
+    <div class="stats" id="email"></div>
+    <div class="callout warn">
+      <b>Watch</b>
+      <ul class="alerts" id="alerts"></ul>
+    </div>
+    <p class="note">Product numbers are Klaviyo. Spend / CPA / CPI are shown at 50% of platform cost. The dashboard refreshes every morning from Klaviyo; paid-ads mix stays on the weekly report until the next pull.</p>
+  </div>
+  <script>
+    const money = (n) => n == null ? "—" : "$" + Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    function stat(el, value, label, bad) {
+      const d = document.createElement("div");
+      d.className = "stat" + (bad ? " bad" : "");
+      d.innerHTML = "<b></b><span></span>";
+      d.querySelector("b").textContent = value;
+      d.querySelector("span").textContent = label;
+      el.appendChild(d);
+    }
+    fetch("data/latest.json")
+      .then((r) => r.json())
+      .then((d) => {
+        document.getElementById("meta").textContent =
+          (d.window && d.window.label ? d.window.label : "") +
+          " · Pacific · updated " +
+          new Date(d.updated_at).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
+        const p = d.product || {};
+        const s = document.getElementById("stats");
+        stat(s, money(p.spend_50pct), "Spend · 50%");
+        stat(s, p.installs, "App installs");
+        stat(s, p.registrations_android, "Account registrations · Android");
+        stat(s, p.registrations_ios, "Account registrations · iOS");
+        stat(s, p.trials, "Trial Granted");
+        stat(s, p.desktop_sync, "Desktop Sync");
+        stat(s, p.password_import, "Password Import", p.password_import === 0);
+        stat(s, p.tru8_usernames, "Tru8 user name");
+
+        const days = d.daily || [];
+        const max = Math.max(1, ...days.map((x) => x.installs));
+        const bars = document.getElementById("bars");
+        const labels = document.getElementById("bar-labels");
+        days.forEach((x) => {
+          const b = document.createElement("div");
+          b.className = "bar";
+          b.style.height = Math.round((x.installs / max) * 120) + "px";
+          b.innerHTML = "<span>" + x.installs + "</span>";
+          bars.appendChild(b);
+          const l = document.createElement("span");
+          l.textContent = x.day.replace(/ .*/, "");
+          labels.appendChild(l);
+        });
+        const dt = document.getElementById("daily");
+        dt.innerHTML = "<tr><th>Day</th><th class='num'>Installs</th><th class='num'>Registrations</th><th class='num'>Trials</th></tr>";
+        days.forEach((x) => {
+          dt.innerHTML += "<tr><td>" + x.day + "</td><td class='num'>" + x.installs + "</td><td class='num'>" + x.registrations + "</td><td class='num'>" + x.trials + "</td></tr>";
+        });
+
+        const ft = document.getElementById("funnel");
+        ft.innerHTML = "<tr><th>Action</th><th class='num'>People</th><th class='num'>Share</th></tr>";
+        (d.funnel_of_28 || []).forEach((x) => {
+          ft.innerHTML += "<tr><td>" + x.action + "</td><td class='num'>" + x.people + "</td><td class='num'>" + x.share + "</td></tr>";
+        });
+
+        const e = d.email_push || {};
+        const em = document.getElementById("email");
+        stat(em, e.l8_01_delivered, "Email → Registration delivered");
+        stat(em, e.onboarding_received_people + " / " + p.registrations, "Got registration onboarding");
+        stat(em, e.onboarding_opened_people, "Opened an onboarding email");
+        stat(em, e.trial_email_opened || e.push_opened, "Opened a trial email or push", true);
+
+        const ul = document.getElementById("alerts");
+        (d.alerts || []).forEach((a) => {
+          const li = document.createElement("li");
+          li.textContent = a;
+          ul.appendChild(li);
+        });
+      })
+      .catch(() => {
+        document.getElementById("meta").textContent = "Could not load data/latest.json";
+      });
+  </script>
+</body>
+</html>
