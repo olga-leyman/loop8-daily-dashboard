@@ -7,63 +7,71 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="top">
-    <div>
-      <p class="eyebrow">Loop8 · Account review</p>
-      <h1>Thu Sep 10 – Mon Sep 14</h1>
-      <p class="sub">Paid spend shown at 50% of platform cost. Product numbers are Klaviyo.</p>
-    </div>
+  <div class="wrap">
     <nav>
-      <a href="index.html">Dashboard</a>
+      <strong>Loop8</strong>
+      <a href="index.html">Daily dashboard</a>
       <a class="active" href="report.html">Sep 10–14 report</a>
     </nav>
-  </header>
 
-  <section class="stats">
-    <div class="stat"><b>$624</b><span>Spend · 50%</span></div>
-    <div class="stat"><b>81</b><span>App installs</span></div>
-    <div class="stat"><b>23</b><span>Accounts · Android</span></div>
-    <div class="stat"><b>5</b><span>Accounts · iOS</span></div>
-  </section>
-  <section class="stats">
-    <div class="stat"><b>10</b><span>Trial granted</span></div>
-    <div class="stat"><b>1</b><span>Desktop sync</span></div>
-    <div class="stat danger"><b>0</b><span>Password import</span></div>
-    <div class="stat"><b>8</b><span>Tru8 user name</span></div>
-  </section>
+    <h1>Loop8 · Sep 10–14 account review</h1>
+    <p class="sub">Thu Sep 10–Mon Sep 14, 2026 · Pacific. Spend, CPA, and CPI at 50% of platform cost.</p>
 
-  <table>
-    <thead><tr><th>Day</th><th class="num">Installs</th><th class="num">Accounts</th><th class="num">Trials</th></tr></thead>
-    <tbody>
+    <div class="stats">
+      <div class="stat"><b>$624</b><span>Spend · 50%</span></div>
+      <div class="stat"><b>81</b><span>App installs</span></div>
+      <div class="stat"><b>23</b><span>Account registrations · Android</span></div>
+      <div class="stat"><b>5</b><span>Account registrations · iOS</span></div>
+      <div class="stat"><b>10</b><span>Trial Granted</span></div>
+      <div class="stat"><b>1</b><span>Desktop Sync</span></div>
+      <div class="stat bad"><b>0</b><span>Password Import</span></div>
+      <div class="stat"><b>8</b><span>Tru8 user name</span></div>
+    </div>
+
+    <table>
+      <tr><th>Day</th><th class="num">Installs</th><th class="num">Full registrations</th><th class="num">Trials</th></tr>
       <tr><td>Thu 9/10</td><td class="num">8</td><td class="num">1</td><td class="num">1</td></tr>
       <tr><td>Fri 9/11</td><td class="num">16</td><td class="num">7</td><td class="num">2</td></tr>
       <tr><td>Sat 9/12</td><td class="num">25</td><td class="num">8</td><td class="num">1</td></tr>
       <tr><td>Sun 9/13</td><td class="num">23</td><td class="num">8</td><td class="num">4</td></tr>
-      <tr><td>Mon 9/14</td><td class="num">9</td><td class="num">4</td><td class="num">2</td></tr>
-    </tbody>
-  </table>
-  <p class="lede">Paid subscriptions: 0. Cancels: 1. Install → account is 35%. iOS is the leak: 5 accounts from 33 installs.</p>
+      <tr><td>Mon 9/14*</td><td class="num">9</td><td class="num">4</td><td class="num">2</td></tr>
+    </table>
+    <p class="note">Source: Klaviyo App Installed, Account Registration, Trial Granted. Paid subscriptions: 0. Cancels: 1.</p>
 
-  <h2>What registered people did</h2>
-  <p class="lede">Of the 28 people who created a Loop8 account this week.</p>
-  <table>
-    <thead><tr><th>Action</th><th class="num">People of 28</th><th class="num">Share</th></tr></thead>
-    <tbody>
+    <h2>What registered people did</h2>
+    <p class="sub">Of the 28 people who created a Loop8 account this week.</p>
+    <table>
+      <tr><th>Action</th><th class="num">People of 28</th><th class="num">Share</th></tr>
       <tr><td>Opened the app this week</td><td class="num">24</td><td class="num">86%</td></tr>
-      <tr><td>Trial granted</td><td class="num">10</td><td class="num">36%</td></tr>
+      <tr><td>Trial Granted</td><td class="num">10</td><td class="num">36%</td></tr>
       <tr><td>Privacy Mate scan completed</td><td class="num">8</td><td class="num">29%</td></tr>
       <tr><td>Tru8 Connect profile created</td><td class="num">8</td><td class="num">29%</td></tr>
       <tr><td>Recovery contact added</td><td class="num">2</td><td class="num">7%</td></tr>
       <tr><td>Application paired (desktop sync)</td><td class="num">1</td><td class="num">—</td></tr>
-      <tr><td>Passwords imported</td><td class="num">0</td><td class="num">0%</td></tr>
+      <tr><td>Passwords Imported</td><td class="num">0</td><td class="num">0%</td></tr>
       <tr><td>Authenticator / MySafe item added</td><td class="num">0</td><td class="num">0%</td></tr>
-    </tbody>
-  </table>
+    </table>
 
-  <h2>By objective · what was tested and what worked</h2>
-  <table class="obj">
-    <thead><tr><th>Objective</th><th>Best channel</th><th>Best message</th></tr></thead>
-    <tbody>
+    <h2>App opens · 28 new accounts only</h2>
+    <div class="stats">
+      <div class="stat"><b>110</b><span>Open events from the 28</span></div>
+      <div class="stat"><b>3.9</b><span>Open events per new account</span></div>
+      <div class="stat"><b>24</b><span>Of 28 opened at least once</span></div>
+    </div>
+    <p class="note">63 of the 110 opens happened after they created the account (16 people). Existing users are not in these numbers.</p>
+
+    <h2>Paid ads</h2>
+    <div class="stats">
+      <div class="stat"><b>$624</b><span>Spend · 50%</span></div>
+      <div class="stat"><b>$22</b><span>CPA · 50%</span></div>
+      <div class="stat"><b>$7.70</b><span>CPI · 50%</span></div>
+      <div class="stat bad"><b>0</b><span>Paid plans</span></div>
+    </div>
+    <p class="note">Direct to App Store $252 (40%) · Retargeting $211 (34%) · Search $61 (10%) · YouTube UGC $60 (10%) · PR news $39 (6%).</p>
+
+    <h2>By objective · what was tested and what worked</h2>
+    <table>
+      <tr><th>Objective</th><th>Best channel</th><th>Best message</th></tr>
       <tr>
         <td>Direct to App Store</td>
         <td>Google Play UAC — 40 of 81 Klaviyo installs (then iOS App Store — 21). Together 61 of 81. Meta OneLink: 353 clicks, 0 installs.</td>
@@ -71,76 +79,178 @@
       </tr>
       <tr>
         <td>Retargeting</td>
-        <td>Site: Google Display — 83 sessions, 2 downloads. Store visitors: Meta RT iOS — 46 App Store visits, 0 installs. Install RT: TikTok 448 clicks, 0 installs.</td>
-        <td>Site: “Kills the master password” (59 clicks, 2 downloads). Store: “Simple and free” (7 clicks, 6 App Store visits, 1.19% CTR). TikTok if you keep it: Sync-your-devices (64 clicks, 3.4% CTR) — not Cafe.</td>
+        <td>Site: Google Display — 83 sessions, 2 downloads (Meta RT Visitors: 64 sessions). Store visitors: Meta RT iOS — 46 App Store visits, 0 installs. Install RT: none converted (TikTok 448 clicks, 0 installs).</td>
+        <td>Site: “Kills the master password” (59 clicks, 2 downloads). Store: “Simple and free” (7 clicks, 6 App Store visits, 1.19% CTR). TikTok if you keep it: Sync-your-devices UGC (64 clicks, 3.4% CTR) — not Cafe.</td>
       </tr>
       <tr>
         <td>PR news</td>
-        <td>Meta — 183 clicks vs Reddit 50. Not an install path.</td>
-        <td>Meta: “Kills the master password” (176 of 183 clicks). Reddit: “You are the password. Face is the key.” (31 of 50 clicks).</td>
+        <td>Meta — 183 clicks vs Reddit 50. Cheaper too (~$0.10 CPC). Not an install path.</td>
+        <td>Meta volume: “Kills the master password” (176 of 183 clicks, 72 landing-page views). Reddit CTR: “You are the password. Face is the key.” (31 of 50 clicks).</td>
       </tr>
       <tr>
         <td>Google Search</td>
-        <td>Search Volume RSA — 82 clicks, 4 Click to Download, 42 website sessions.</td>
+        <td>Search Volume RSA — 82 clicks, 4 Click to Download, 42 website sessions. Only Search path that downloaded.</td>
         <td>Keyword: exact [password manager] (76–80 clicks, all 4 downloads). Headlines: “No Master Password” / “Unlock With Face ID.”</td>
       </tr>
       <tr>
         <td>YouTube UGC</td>
-        <td>YouTube Shorts — 137 website sessions, 6 Click to Download, 0 Klaviyo installs.</td>
-        <td>Mom as IT (67 clicks, 3 downloads), then Airport password (51 clicks, 2). Same three headlines on every video — the video is what won, not the RSA.</td>
+        <td>YouTube Shorts — 137 website sessions, 6 Click to Download, 0 Klaviyo installs. Best tagged web source this week.</td>
+        <td>Mom as IT (67 clicks, 3 downloads), then Airport password (51 clicks, 2). Same three headlines on every video. The video is what won, not the RSA.</td>
       </tr>
-    </tbody>
-  </table>
+    </table>
 
-  <h2>Paid ads</h2>
-  <section class="stats">
-    <div class="stat"><b>$624</b><span>Spend · 50%</span></div>
-    <div class="stat"><b>$22</b><span>CPA · 50%</span></div>
-    <div class="stat"><b>$7.70</b><span>CPI · 50%</span></div>
-    <div class="stat danger"><b>0</b><span>Paid plans</span></div>
-  </section>
-  <p class="lede">Direct to App Store $252 (40%) · Retargeting $211 (34%) · Search $61 (10%) · YouTube $60 (10%) · PR $39 (6%).</p>
+    <h3>Direct to the App Store</h3>
+    <p class="sub">Goal: a store install. Tested Google Play UAC, Google iOS App Store, iOS Privacy, Kill-master-password test, and Meta Prospect OneLink.</p>
+    <table>
+      <tr><th></th><th>Winner</th><th>Do not scale</th></tr>
+      <tr>
+        <td>Channel</td>
+        <td>Google Play UAC (40 Klaviyo installs). Then Google iOS App Store (21). Together 61 of 81 installs.</td>
+        <td>Meta OneLink and TikTok: clicks, 0 Klaviyo installs. iOS Privacy: 33 clicks, 0 installs.</td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td>Play: “Check Your Passwords” + free-scan line (Google BEST). Video: Introducing Privacy Mate (22 Play installs). iOS: “You are the password / no master password to remember.”</td>
+        <td>“You’re being tracked.” Meta Canva/UGC on OneLink. Play’s second video (jotting passwords) lost to Privacy Mate.</td>
+      </tr>
+    </table>
+    <p class="note">Play UAC CPI $3.32 · iOS App Store CPI $4.33 (cost 50%). Meta Face is the key and UGC PrivacyMate won clicks, not installs.</p>
 
-  <h2>New accounts · live email and push</h2>
-  <p class="lede">The 28 people who created an account. Live flows only. Drafts and campaigns are out.</p>
-  <section class="stats">
-    <div class="stat"><b>0</b><span>Email → registration delivered</span></div>
-    <div class="stat"><b>18 / 28</b><span>Got onboarding</span></div>
-    <div class="stat"><b>8</b><span>Opened onboarding</span></div>
-    <div class="stat danger"><b>0</b><span>Opened trial email or push</span></div>
-  </section>
-  <p>L8-01 (email to registration) delivered 0. None of these accounts came through email — they registered in the app after an install.</p>
-  <h3>Account registration onboarding</h3>
-  <table>
-    <thead><tr><th>Email</th><th class="num">Delivered</th><th class="num">Opened</th><th class="num">Clicked</th></tr></thead>
-    <tbody>
-      <tr><td>Onboarding: Connect Loop8 on your desktop</td><td class="num">18</td><td class="num">4</td><td class="num">0</td></tr>
-      <tr><td>Onboarding: Add the Chrome extension</td><td class="num">13</td><td class="num">1</td><td class="num">0</td></tr>
-      <tr><td>Onboarding: Upload your passwords</td><td class="num">7</td><td class="num">4</td><td class="num">1</td></tr>
-    </tbody>
-  </table>
-  <p>Upload your passwords is the only click. 10 of 28 never entered this flow.</p>
-  <h3>Trial granted</h3>
-  <p>7 of 10 trials received Trial Onboarding. 0 opened. 0 clicked. Those 7 also got free onboarding at the same time.</p>
-  <h3>Push</h3>
-  <p>8 of 28 received Congrats / Install / Post Acquisition. 0 opened.</p>
-  <div class="callout">
-    <strong>Onboarding is the only live series people open.</strong>
-    8 of 18 who received Desktop to Face ID opened it. Trial emails and every push to these 28 were ignored. L8-01 did not run.
-  </div>
+    <h3>Retargeting</h3>
+    <p class="sub">Store visitors, installers, ad clickers, site visitors. Cost $211. 0 attributed registrations.</p>
+    <table>
+      <tr><th>Audience</th><th>Best channel</th><th>Best message</th><th>Not working</th></tr>
+      <tr>
+        <td>Website visitors</td>
+        <td>Google Display (83 sessions) and Meta RT Visitors (64 tagged sessions).</td>
+        <td>Display: “Kills the master password” (59 clicks, 2 downloads). Meta: “Finish getting started.”</td>
+        <td>Product-offer landscape still. Setup desktop download: $7, 6 clicks, 0 purchases.</td>
+      </tr>
+      <tr>
+        <td>App Store / ad clickers (iOS)</td>
+        <td>Meta RT Message recorded 46 App Store visits. 0 installs.</td>
+        <td>“Simple and free” (1.19% CTR, 6 App Store visits on $1).</td>
+        <td>Other simple still ($7, 0.15% CTR) and “You are the password. Face is the key.” as No-vault RT ($8.80, 0.27% CTR).</td>
+      </tr>
+      <tr>
+        <td>App install RT</td>
+        <td>None produced installs. TikTok got the clicks (448).</td>
+        <td>If you keep TikTok: Sync (3.4% CTR). Airport holds (10.8% 6s view).</td>
+        <td>Cafe: 155 clicks but 2.5% watched 6 seconds. All TikTok: 0 installs.</td>
+      </tr>
+    </table>
 
-  <h2>Read of the five days</h2>
-  <div class="grid-2">
-    <div>
-      <h3>Working</h3>
-      <p>Play UAC (Check Your Passwords / Privacy Mate) then iOS App Store (no master password). Search: exact [password manager]. YouTube: Mom as IT. PR and Display: “Kills the master password.” Trial rate 10/28. Onboarding: 8 of 18 opened; Upload your passwords is the only click.</p>
+    <h3>PR news · Meta vs Reddit</h3>
+    <p class="sub">Traffic to the AP News master-password release, not the store. Cost $39. Paused Sep 13.</p>
+    <table>
+      <tr><th>Channel</th><th class="num">Cost</th><th class="num">Clicks</th><th>Best creative</th><th>Read</th></tr>
+      <tr><td>Meta</td><td class="num">$18</td><td class="num">183</td><td>“Kills the master password” (176 of 183 clicks, 72 landing-page views)</td><td>Best channel for volume. CPC ~$0.10.</td></tr>
+      <tr><td>Reddit</td><td class="num">$21</td><td class="num">50</td><td>“You are the password. Face is the key.” (31 of 50 clicks)</td><td>Higher CTR, fewer clicks, more expensive.</td></tr>
+    </table>
+
+    <h3>Google Search · keywords for the download</h3>
+    <p class="sub">RSA “No Master Password / Unlock With Face ID.” Conversions are Click to Download, not Klaviyo installs.</p>
+    <table>
+      <tr><th>Keyword / search term</th><th>Match</th><th class="num">Clicks</th><th class="num">Click to Download</th><th class="num">Cost · 50%</th></tr>
+      <tr><td>password manager</td><td>Exact + query</td><td class="num">76–80</td><td class="num">4</td><td class="num">$56–$59</td></tr>
+      <tr><td>password manager app</td><td>Exact</td><td class="num">5</td><td class="num">0</td><td class="num">$3.65</td></tr>
+      <tr><td>password vault</td><td>Exact</td><td class="num">2</td><td class="num">0</td><td class="num">$1.76</td></tr>
+      <tr><td>loop8 (Brand)</td><td>Exact</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td></tr>
+      <tr><td>best / free password manager</td><td>Exact</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td></tr>
+    </table>
+
+    <h3>YouTube Shorts · UGC test</h3>
+    <p class="sub">Seven videos, same three headlines. 137 website sessions. 6 Click to Download. 0 Klaviyo installs.</p>
+    <table>
+      <tr><th>Video</th><th class="num">Clicks</th><th class="num">Click to Download</th><th class="num">Cost · 50%</th><th>Verdict</th></tr>
+      <tr><td>Mom as IT</td><td class="num">67</td><td class="num">3</td><td class="num">$16</td><td>Best UGC</td></tr>
+      <tr><td>Airport password</td><td class="num">51</td><td class="num">2</td><td class="num">$14</td><td>Keep</td></tr>
+      <tr><td>Weird emails</td><td class="num">57</td><td class="num">1</td><td class="num">$14</td><td>Volume, weaker convert</td></tr>
+      <tr><td>Access anywhere</td><td class="num">52</td><td class="num">0</td><td class="num">$9</td><td>Cut</td></tr>
+      <tr><td>All-in-one privacy</td><td class="num">15</td><td class="num">0</td><td class="num">$4</td><td>Cut</td></tr>
+      <tr><td>Cross-platform / Biometric</td><td class="num">15</td><td class="num">0</td><td class="num">$4</td><td>Not delivered</td></tr>
+    </table>
+
+    <h2>Website traffic</h2>
+    <p class="sub">GA4 · 1,150 sessions, 1,073 first visits, 79 engaged sessions, 31 download clicks (20 people).</p>
+    <table>
+      <tr><th>Source / campaign</th><th class="num">Sessions</th><th class="num">Engaged</th></tr>
+      <tr><td>Direct</td><td class="num">614</td><td class="num">8</td></tr>
+      <tr><td>YouTube Shorts UGC (Google)</td><td class="num">137</td><td class="num">20</td></tr>
+      <tr><td>Unassigned / (not set)</td><td class="num">130</td><td class="num">0</td></tr>
+      <tr><td>Display RT Website</td><td class="num">83</td><td class="num">22</td></tr>
+      <tr><td>Meta paid · l8_rt_visitors</td><td class="num">64</td><td class="num">5</td></tr>
+      <tr><td>Google cross-network, data missing</td><td class="num">62</td><td class="num">1</td></tr>
+      <tr><td>Search Volume</td><td class="num">42</td><td class="num">11</td></tr>
+      <tr><td>Display RT 1d hot</td><td class="num">25</td><td class="num">3</td></tr>
+      <tr><td>tru8.com referral</td><td class="num">19</td><td class="num">0</td></tr>
+      <tr><td>Klaviyo email</td><td class="num">5</td><td class="num">3</td></tr>
+    </table>
+    <p class="note">/get-started took 464 sessions. Direct is still 53% because Meta prospecting and TikTok go to OneLink/App Store and PR goes to AP News.</p>
+
+    <h2>New accounts · live email and push</h2>
+    <p class="sub">The 28 people who created a Loop8 account this week. Live flows only.</p>
+    <div class="stats">
+      <div class="stat"><b>0</b><span>Email → Registration delivered</span></div>
+      <div class="stat"><b>18 / 28</b><span>Got registration onboarding</span></div>
+      <div class="stat"><b>8</b><span>Opened an onboarding email</span></div>
+      <div class="stat bad"><b>0</b><span>Opened a trial email or push</span></div>
     </div>
-    <div>
-      <h3>Not working</h3>
-      <p>Meta OneLink and TikTok: clicks, 0 installs. “You’re being tracked.” Search terms besides password manager. YouTube Access / All-in-one / Biometric. iOS install→account 15%. Desktop sync 1. Password import 0. L8-01 delivered 0. Trial emails and push: 0 opens.</p>
+
+    <h3>Email to Registration</h3>
+    <table>
+      <tr><th></th><th class="num">Delivered</th><th class="num">Of the 28</th><th class="num">Opened</th><th class="num">Clicked</th></tr>
+      <tr><td>L8-01 Profile to Registration</td><td class="num">0</td><td class="num">0</td><td class="num">—</td><td class="num">—</td></tr>
+    </table>
+    <p>None of this week’s accounts came through email. They registered in the app after an install.</p>
+
+    <h3>Account Registration Onboarding</h3>
+    <p class="sub">Live: Onboarding: Desktop to Face ID. 18 of 28 received at least one email. 8 opened. 1 clicked.</p>
+    <table>
+      <tr><th>Email</th><th class="num">Delivered</th><th class="num">Opened</th><th class="num">Clicked</th><th class="num">People open rate</th></tr>
+      <tr><td>Onboarding: Connect Loop8 on your desktop</td><td class="num">18</td><td class="num">4</td><td class="num">0</td><td class="num">22%</td></tr>
+      <tr><td>Onboarding: Add the Chrome extension</td><td class="num">13</td><td class="num">1</td><td class="num">0</td><td class="num">8%</td></tr>
+      <tr><td>Onboarding: Upload your passwords</td><td class="num">7</td><td class="num">4</td><td class="num">1</td><td class="num">57%</td></tr>
+    </table>
+    <table>
+      <tr><th>Also live on the same people</th><th class="num">People</th><th class="num">Delivered</th><th class="num">Opened</th><th class="num">Clicked</th></tr>
+      <tr><td>L8-10 Daily Cybersecurity Questions</td><td class="num">9</td><td class="num">12</td><td class="num">2</td><td class="num">0</td></tr>
+    </table>
+
+    <h3>Trial Granted</h3>
+    <p class="sub">Live: Trial Onboarding: Desktop to LOOP850. 10 trials. 7 received this series. 0 opened. 0 clicked.</p>
+    <table>
+      <tr><th>Email</th><th class="num">Delivered</th><th class="num">Opened</th><th class="num">Clicked</th></tr>
+      <tr><td>Trial Day 1: Don’t let a 14-day trial nap in the dock</td><td class="num">6</td><td class="num">0</td><td class="num">0</td></tr>
+      <tr><td>Trial Day 2: Did Chrome already pack your passwords?</td><td class="num">5</td><td class="num">0</td><td class="num">0</td></tr>
+      <tr><td>Trial Day 3: Safari’s hiding a second stash</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr>
+    </table>
+    <p>7 of those 10 also got free onboarding at the same time. 3 trials got neither live series.</p>
+
+    <h3>Push</h3>
+    <p class="sub">8 of 28 received at least one. 0 opened.</p>
+    <table>
+      <tr><th>Flow</th><th class="num">People of 28</th><th class="num">Delivered</th><th class="num">Opened</th></tr>
+      <tr><td>Congrats PUSH</td><td class="num">6</td><td class="num">15</td><td class="num">0</td></tr>
+      <tr><td>New App Install · 4 Push</td><td class="num">2</td><td class="num">2</td><td class="num">0</td></tr>
+      <tr><td>Post Acquisition PUSH</td><td class="num">2</td><td class="num">2</td><td class="num">0</td></tr>
+    </table>
+    <div class="callout warn">
+      <b>Onboarding is the only live series people open.</b>
+      8 of 18 who received Desktop to Face ID opened it. Trial emails and every push to these 28 were ignored. L8-01 did not run.
+    </div>
+
+    <h2>Read of the five days</h2>
+    <div class="grid2">
+      <div>
+        <h3>Working</h3>
+        <p>Direct to store: Play UAC (Check Your Passwords / Privacy Mate) then iOS App Store (no master password). Search: exact [password manager] is the only keyword that downloaded. YouTube: Mom as IT. PR: “Kills the master password” on Meta. Site RT: same line on Display. Trial rate 10/28. Onboarding email: 8 of 18 opened; Upload your passwords is the only click.</p>
+      </div>
+      <div>
+        <h3>Not working</h3>
+        <p>Meta OneLink and TikTok: clicks, 0 installs. iOS Privacy tracking message. Search terms besides password manager. YouTube Access / All-in-one / Biometric. Display wallpaper. iOS install→account 15%. Desktop sync 1. Password import 0. L8-01 delivered 0. Trial emails and push to the 28: 0 opens.</p>
+      </div>
     </div>
   </div>
-
-  <p class="foot">Loop8 internal. Send this page as the Sep 10–14 review. Live stats: dashboard.</p>
 </body>
 </html>

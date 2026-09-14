@@ -1,9 +1,10 @@
 # Loop8 daily dashboard
 
-Live product stats plus the Sep 10–14 account review.
+Two pages:
 
-- Dashboard: `index.html`
-- Report to send: `report.html`
-- Stats: `data/latest.json` (refreshed weekdays at 8:00am Pacific by GitHub Actions)
+- **[Sep 10–14 report](https://olga-leyman.github.io/loop8-daily-dashboard/report.html)** — send this link to your boss
+- **[Daily dashboard](https://olga-leyman.github.io/loop8-daily-dashboard/)** — rolling last-5-days stats
 
-Paid spend is shown at 50% of platform cost. Product counts come from Klaviyo. The Action needs a `KLAVIYO_API_KEY` repository secret.
+A GitHub Action runs every day at 8:00am Pacific, pulls Klaviyo (installs, registrations, trials, desktop sync, password import, Tru8, live email/push), and updates `data/latest.json`. Paid-ad spend stays on the weekly report until the next manual pull.
+
+Anyone with the link can open the pages. Do not put API keys in this repo.

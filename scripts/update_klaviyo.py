@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pull Klaviyo product stats for the last 5 Pacific days and write data/latest.json."""
+"""Refresh data/latest.json from Klaviyo for the last 5 Pacific days."""
 
 from __future__ import annotations
 
@@ -10,11 +10,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-API_KEY = os.environ["KLAVIYO_API_KEY"]
+API_KEY = os.environ.get("KLAVIYO_API_KEY", "")
 REV = "2026-01-15"
 BASE = "https://a.klaviyo.com/api"
 PT = ZoneInfo("America/Los_Angeles")
@@ -22,18 +22,20 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "latest.json"
 
 METRICS = {
-    "install": "TF2uEs",
-    "registration": "UAMbHw",
-    "trial": "V5TWMT",
-    "paired": "WM4Tkh",
-    "imported": "XWK9pN",
-    "tru8": "SLPnpe",
-    "opened_app": "Sm8cTj",
-    "received_email": "WnHjkX",
-    "opened_email": "SaQvHn",
-    "clicked_email": "TXgpdR",
-    "received_push": "SPvuUk",
-    "opened_push": "UCi5Th",
+    "Account Registration": "UAMbHw",
+    "Trial Granted": "V5TWMT",
+    "App Installed": "TF2uEs",
+    "Received Email": "WnHjkX",
+    "Opened Email": "SaQvHn",
+    "Clicked Email": "TXgpdR",
+    "Received Push": "SPvuUk",
+    "Opened Push": "UCi5Th",
+    "Application Paired": "WM4Tkh",
+    "Passwords Imported": "XWK9pN",
+    "Tru8 Connect Profile Created": "SLPnpe",
+    "Opened App": "Sm8cTj",
+    "Privacy Mate Scan Completed": "UArXPc",
+    "Recovery Contact Added": "TRBaLt",
 }
 
 ONBOARDING = "Ufq8UQ"
@@ -41,9 +43,9 @@ TRIAL_FLOW = "TRVmes"
 L801 = "YaPzNc"
 
 
-def req(url: str, body: dict | None = None) -> dict:
+def req(raw_url: str, method: str = "GET", body: dict | None = None) -> dict:
     data = None if body is None else json.dumps(body).encode()
-    r = urllib.request.Request(url, data=data, method="GET" if body is None else "POST")
+    r = urllib.request.Request(raw_url, data=data, method=method)
     r.add_header("Authorization", f"Klaviyo-API-Key {API_KEY}")
     r.add_header("accept", "application/vnd.api+json")
     r.add_header("revision", REV)
@@ -54,16 +56,17 @@ def req(url: str, body: dict | None = None) -> dict:
             with urllib.request.urlopen(r, timeout=75) as resp:
                 return json.loads(resp.read().decode())
         except urllib.error.HTTPError as e:
+            err = e.read().decode()
             if e.code == 429:
                 time.sleep(2 + attempt * 2)
                 continue
-            raise
-    raise RuntimeError("klaviyo retries exhausted")
+            raise RuntimeError(f"{e.code} {err[:400]}") from e
+    raise RuntimeError("retries exhausted")
 
 
 def page_events(metric_id: str, start: str, end: str) -> list[dict]:
-    filt = f'equals(metric_id,"{metric_id}"),greater-or-equal(datetime,{start}),less-than(datetime,{end})'
-    url = BASE + "/events/?filter=" + urllib.parse.quote(filt) + "&sort=datetime"
+    f = f'equals(metric_id,"{metric_id}"),greater-or-equal(datetime,{start}),less-than(datetime,{end})'
+    url = BASE + "/events/?filter=" + urllib.parse.quote(f) + "&sort=datetime"
     out: list[dict] = []
     while url:
         d = req(url)
@@ -84,157 +87,159 @@ def props(ev: dict) -> dict:
     return ev.get("attributes", {}).get("event_properties") or {}
 
 
-def day_pt(iso: str) -> str:
-    dt = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(PT)
-    return dt.date().isoformat()
+def iso_pt_midnight(d) -> str:
+    return datetime(d.year, d.month, d.day, tzinfo=PT).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def main() -> None:
-    now = datetime.now(PT)
-    start_day = (now - timedelta(days=4)).date()  # 5 calendar days including today
-    start = datetime(start_day.year, start_day.month, start_day.day, tzinfo=PT).astimezone(
-        ZoneInfo("UTC")
-    )
-    end = (now + timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0).astimezone(
-        ZoneInfo("UTC")
-    )
-    start_iso = start.strftime("%Y-%m-%dT%H:%M:%SZ")
-    end_iso = end.strftime("%Y-%m-%dT%H:%M:%SZ")
+    if not API_KEY:
+        raise SystemExit("KLAVIYO_API_KEY is not set")
 
-    installs = page_events(METRICS["install"], start_iso, end_iso)
-    regs = page_events(METRICS["registration"], start_iso, end_iso)
-    trials = page_events(METRICS["trial"], start_iso, end_iso)
-    paired = page_events(METRICS["paired"], start_iso, end_iso)
-    imported = page_events(METRICS["imported"], start_iso, end_iso)
-    tru8 = page_events(METRICS["tru8"], start_iso, end_iso)
-    recv_e = page_events(METRICS["received_email"], start_iso, end_iso)
-    open_e = page_events(METRICS["opened_email"], start_iso, end_iso)
-    click_e = page_events(METRICS["clicked_email"], start_iso, end_iso)
-    recv_p = page_events(METRICS["received_push"], start_iso, end_iso)
-    open_p = page_events(METRICS["opened_push"], start_iso, end_iso)
-    opens = page_events(METRICS["opened_app"], start_iso, end_iso)
+    now = datetime.now(PT)
+    end_day = now.date() + timedelta(days=1)
+    start_day = now.date() - timedelta(days=4)
+    start = iso_pt_midnight(start_day)
+    end = iso_pt_midnight(end_day)
+
+    installs = page_events(METRICS["App Installed"], start, end)
+    regs = page_events(METRICS["Account Registration"], start, end)
+    trials = page_events(METRICS["Trial Granted"], start, end)
+    paired = page_events(METRICS["Application Paired"], start, end)
+    imported = page_events(METRICS["Passwords Imported"], start, end)
+    tru8 = page_events(METRICS["Tru8 Connect Profile Created"], start, end)
+    recv_e = page_events(METRICS["Received Email"], start, end)
+    open_e = page_events(METRICS["Opened Email"], start, end)
+    click_e = page_events(METRICS["Clicked Email"], start, end)
+    recv_p = page_events(METRICS["Received Push"], start, end)
+    open_p = page_events(METRICS["Opened Push"], start, end)
+    opened_app = page_events(METRICS["Opened App"], start, end)
+    scans = page_events(METRICS["Privacy Mate Scan Completed"], start, end)
+    recovery = page_events(METRICS["Recovery Contact Added"], start, end)
 
     reg_ids = {pid(ev) for ev in regs if pid(ev)}
-    trial_ids = {pid(ev) for ev in trials if pid(ev)}
+    trial_ids = {pid(ev) for ev in trials if pid(ev)} & reg_ids
 
-    android = 0
-    ios = 0
+    def day_key(ev: dict) -> str:
+        dt = datetime.fromisoformat(ev["attributes"]["datetime"].replace("Z", "+00:00")).astimezone(PT)
+        return dt.strftime("%a") + f" {dt.month}/{dt.day}"
+
+    daily_map: dict[str, dict] = defaultdict(lambda: {"installs": 0, "registrations": 0, "trials": 0})
+    for ev in installs:
+        daily_map[day_key(ev)]["installs"] += 1
     for ev in regs:
-        src = str(props(ev).get("custom_source") or "").lower()
-        plat = str(props(ev).get("Platform") or props(ev).get("OS Name") or src)
-        # Klaviyo registration often only has custom_source; fall back to install overlap later
+        daily_map[day_key(ev)]["registrations"] += 1
+    for ev in trials:
+        daily_map[day_key(ev)]["trials"] += 1
+
+    days = []
+    cursor = start_day
+    while cursor < end_day:
+        label = datetime(cursor.year, cursor.month, cursor.day).strftime("%a") + f" {cursor.month}/{cursor.day}"
+        row = daily_map.get(label, {"installs": 0, "registrations": 0, "trials": 0})
+        days.append({"day": label, "installs": row["installs"], "registrations": row["registrations"], "trials": row["trials"]})
+        cursor += timedelta(days=1)
+
+    def people_in(events, flow=None):
+        s = set()
+        for ev in events:
+            p = pid(ev)
+            if p not in reg_ids:
+                continue
+            if flow and props(ev).get("$flow") != flow:
+                continue
+            s.add(p)
+        return s
+
+    onb_recv = people_in(recv_e, ONBOARDING)
+    onb_open = people_in(open_e, ONBOARDING)
+    onb_click = people_in(click_e, ONBOARDING)
+    trial_open = people_in(open_e, TRIAL_FLOW)
+    l801 = sum(1 for ev in recv_e if props(ev).get("$flow") == L801)
+    push_open = people_in(open_p)
+
+    n = len(reg_ids) or 1
+    funnel = [
+        {"action": "Opened the app this week", "people": len(people_in(opened_app)), "share": f"{round(100 * len(people_in(opened_app)) / n)}%"},
+        {"action": "Trial Granted", "people": len(trial_ids), "share": f"{round(100 * len(trial_ids) / n)}%"},
+        {"action": "Privacy Mate scan completed", "people": len(people_in(scans)), "share": f"{round(100 * len(people_in(scans)) / n)}%"},
+        {"action": "Tru8 Connect profile created", "people": len({pid(ev) for ev in tru8 if pid(ev) in reg_ids}), "share": f"{round(100 * len({pid(ev) for ev in tru8 if pid(ev) in reg_ids}) / n)}%"},
+        {"action": "Recovery contact added", "people": len(people_in(recovery)), "share": f"{round(100 * len(people_in(recovery)) / n)}%"},
+        {"action": "Application paired (desktop sync)", "people": len({pid(ev) for ev in paired if pid(ev) in reg_ids}), "share": "—"},
+        {"action": "Passwords Imported", "people": len({pid(ev) for ev in imported if pid(ev) in reg_ids}), "share": f"{round(100 * len({pid(ev) for ev in imported if pid(ev) in reg_ids}) / n)}%"},
+    ]
+
+    prev = {}
+    if OUT.exists():
+        try:
+            prev = json.loads(OUT.read_text())
+        except json.JSONDecodeError:
+            prev = {}
+    prev_product = prev.get("product") or {}
+
+    ios = 0
+    android = 0
+    for ev in regs:
+        plat = (props(ev).get("Platform") or props(ev).get("OS Name") or "").lower()
         if "ios" in plat or "iphone" in plat:
             ios += 1
         elif "android" in plat:
             android += 1
+    if android + ios != len(reg_ids):
+        android = prev_product.get("registrations_android", android)
+        ios = prev_product.get("registrations_ios", len(reg_ids) - android)
 
-    # Platform from matching install events on the same profiles
-    install_plat = {}
-    for ev in installs:
-        p = pid(ev)
-        if not p:
-            continue
-        osn = str(props(ev).get("OS Name") or props(ev).get("Platform") or "").lower()
-        if osn:
-            install_plat[p] = osn
-    android = sum(1 for p in reg_ids if "android" in install_plat.get(p, ""))
-    ios = sum(1 for p in reg_ids if "ios" in install_plat.get(p, "") or "iphone" in install_plat.get(p, ""))
-    if android + ios < len(reg_ids):
-        # leftover unknown — keep split if we have it, else leave unlabeled in totals only
-        pass
-
-    paired_new = {pid(ev) for ev in paired if pid(ev) in reg_ids}
-    imported_new = {pid(ev) for ev in imported if pid(ev) in reg_ids}
-    tru8_new = {pid(ev) for ev in tru8 if pid(ev) in reg_ids}
-    opened_new = {pid(ev) for ev in opens if pid(ev) in reg_ids}
-
-    def flow_people(events, flow):
-        return {pid(ev) for ev in events if pid(ev) in reg_ids and props(ev).get("$flow") == flow}
-
-    onb_people = flow_people(recv_e, ONBOARDING)
-    onb_open = flow_people(open_e, ONBOARDING)
-    onb_click = flow_people(click_e, ONBOARDING)
-    l801 = sum(1 for ev in recv_e if props(ev).get("$flow") == L801)
-    trial_open = flow_people(open_e, TRIAL_FLOW)
-    push_open = {pid(ev) for ev in open_p if pid(ev) in reg_ids}
-
-    days = []
-    cursor = start_day
-    today = now.date()
-    labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    while cursor <= today:
-        ds = cursor.isoformat()
-        days.append(
-            {
-                "date": ds,
-                "label": labels[cursor.weekday()],
-                "installs": sum(1 for ev in installs if day_pt(ev["attributes"]["datetime"]) == ds),
-                "registrations": sum(1 for ev in regs if day_pt(ev["attributes"]["datetime"]) == ds),
-                "trials": sum(1 for ev in trials if day_pt(ev["attributes"]["datetime"]) == ds),
-            }
-        )
-        cursor += timedelta(days=1)
-
-    n_reg = len(reg_ids)
-    n_ins = len({pid(ev) for ev in installs if pid(ev)}) or len(installs)
     alerts = []
-    if len(imported_new) == 0:
+    if len({pid(ev) for ev in imported if pid(ev) in reg_ids}) == 0:
         alerts.append("Password import is 0.")
-    if n_ins and ios and n_reg:
-        alerts.append(f"New accounts this window: {n_reg}. Desktop sync {len(paired_new)}.")
-    if len(trial_open) == 0 and len(trial_ids):
-        alerts.append("Trial emails: 0 opens on new accounts.")
-    if len(push_open) == 0:
-        alerts.append("Push: 0 opens on new accounts.")
-
-    prev = {}
-    if OUT.exists():
-        prev = json.loads(OUT.read_text())
+    if len({pid(ev) for ev in paired if pid(ev) in reg_ids}) <= 1:
+        alerts.append("Desktop sync is still almost unused.")
+    if not trial_open:
+        alerts.append("Trial emails: 0 opens among new accounts.")
+    if not push_open:
+        alerts.append("Push: 0 opens among new accounts.")
+    if l801 == 0:
+        alerts.append("L8-01 Email to Registration delivered 0.")
 
     payload = {
-        "updated_at": now.isoformat(timespec="seconds"),
+        "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "timezone": "America/Los_Angeles",
         "window": {
-            "label": f"{start_day.strftime('%a %b %-d')} – {today.strftime('%a %b %-d')}",
+            "label": f"{start_day.strftime('%b')} {start_day.day}–{now.strftime('%b')} {now.day}, {now.year}",
             "start": start_day.isoformat(),
-            "end": today.isoformat(),
+            "end": now.date().isoformat(),
         },
         "product": {
-            "app_installs": len(installs),
+            "spend_50pct": prev_product.get("spend_50pct"),
+            "cpa_50pct": prev_product.get("cpa_50pct"),
+            "cpi_50pct": prev_product.get("cpi_50pct"),
+            "installs": len(installs),
+            "registrations": len(reg_ids),
             "registrations_android": android,
             "registrations_ios": ios,
-            "registrations": n_reg,
-            "install_to_account_pct": round(100 * n_reg / len(installs), 1) if installs else 0,
             "trials": len(trial_ids),
-            "desktop_sync": len(paired_new),
-            "password_import": len(imported_new),
-            "tru8_usernames": len(tru8_new),
-            "paid_plans": prev.get("product", {}).get("paid_plans", 0),
-            "cancels": prev.get("product", {}).get("cancels", 0),
-            "opened_app_people": len(opened_new),
-            "open_events": sum(1 for ev in opens if pid(ev) in reg_ids),
+            "desktop_sync": len({pid(ev) for ev in paired if pid(ev) in reg_ids}),
+            "password_import": len({pid(ev) for ev in imported if pid(ev) in reg_ids}),
+            "tru8_usernames": len({pid(ev) for ev in tru8 if pid(ev) in reg_ids}),
+            "paid_plans": prev_product.get("paid_plans", 0),
+            "cancels": prev_product.get("cancels", 0),
+            "install_to_account_pct": round(100 * len(reg_ids) / max(1, len(installs))),
         },
-        "paid": prev.get("paid")
-        or {
-            "spend_50pct": None,
-            "cpa_50pct": None,
-            "cpi_50pct": None,
-            "note": "Paid ads are not auto-pulled yet. Last snapshot stays until the next full review.",
-        },
+        "funnel_of_28": funnel,
+        "daily": days,
         "email_push": {
-            "l801_delivered": l801,
-            "onboarding_people": len(onb_people),
-            "onboarding_opened": len(onb_open),
-            "onboarding_clicked": len(onb_click),
+            "l8_01_delivered": l801,
+            "onboarding_received_people": len(onb_recv),
+            "onboarding_opened_people": len(onb_open),
+            "onboarding_clicked_people": len(onb_click),
             "trial_email_opened": len(trial_open),
             "push_opened": len(push_open),
+            "no_live_email": max(0, len(reg_ids) - len(onb_recv)),
         },
-        "daily": days,
         "alerts": alerts,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2) + "\n")
-    print(f"wrote {OUT} regs={n_reg} installs={len(installs)}")
+    print(f"Wrote {OUT} installs={len(installs)} regs={len(reg_ids)}")
 
 
 if __name__ == "__main__":
