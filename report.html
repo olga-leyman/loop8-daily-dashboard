@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <title>Loop8 · Sep 10–14 account review</title>
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <div class="wrap">
@@ -40,13 +40,15 @@
     <p class="note">Source: Klaviyo App Installed, Account Registration, Trial Granted. Paid subscriptions: 0. Cancels: 1.</p>
 
     <h2>What registered people did</h2>
-    <p class="sub">Taps are in-app button clicks. Completes are Klaviyo. Instructions sent are live onboarding emails to the 28 new accounts. Taps can include people already in the app — they show intent, not a finished job. Do not add tap rows together.</p>
+    <p class="sub">Taps are in-app button clicks. Completes are Klaviyo. The D0 desktop email is automated onboarding. “Send me desktop instructions” is a separate in-app tap that should fire Klaviyo Setup Instruction and the Setup Instructions email. Do not add tap rows together.</p>
     <table>
       <tr><th>Action</th><th>Kind</th><th class="num">People</th><th class="num">Of the 28</th></tr>
       <tr><td>Opened the app this week</td><td>Complete</td><td class="num">24</td><td class="num">86%</td></tr>
-      <tr><td>Sync with desktop instructions sent</td><td>Email delivered</td><td class="num">18</td><td class="num">64%</td></tr>
+      <tr><td>Onboarding desktop instructions emailed (D0)</td><td>Email delivered</td><td class="num">18</td><td class="num">64%</td></tr>
       <tr><td>Connect with computer</td><td>Tap</td><td class="num">12</td><td class="num">—</td></tr>
       <tr><td>Connect MySafe desktop</td><td>Tap</td><td class="num">6</td><td class="num">—</td></tr>
+      <tr><td>Send me desktop instructions</td><td>Tap</td><td class="num">2</td><td class="num">7%</td></tr>
+      <tr><td>Setup Instructions email (from that tap)</td><td>Email delivered</td><td class="num">1</td><td class="num">4%</td></tr>
       <tr><td>Application paired (desktop sync)</td><td>Complete</td><td class="num">1</td><td class="num">—</td></tr>
       <tr><td>Import passwords from phone</td><td>Tap</td><td class="num">9</td><td class="num">—</td></tr>
       <tr><td>Import passwords from computer / web</td><td>Tap</td><td class="num">5</td><td class="num">—</td></tr>
@@ -59,8 +61,8 @@
       <tr><td>Authenticator / MySafe item added</td><td>Complete</td><td class="num">0</td><td class="num">0%</td></tr>
     </table>
     <div class="callout warn">
-      <b>People tap desktop sync and password import. Almost nobody finishes.</b>
-      18 of 28 got “Connect Loop8 on your desktop.” 4 opened it. 0 clicked. 12 tapped Connect with computer. 1 finished pairing (and that person is not one of the 28). 9 tapped import from phone. Passwords Imported = 0.
+      <b>People tap desktop sync. Almost nobody finishes — and the “email me instructions” path is barely firing.</b>
+      12 tapped Connect with computer. 2 tapped “send me desktop instructions.” Only 1 of those 2 got the Setup Instructions email (9 copies to that one Gmail). 0 opened it. The other tapper is subscribed and got nothing. 18 of 28 got the separate onboarding D0 email; that is not this tap.
     </div>
 
     <h2>App opens · 28 new accounts only</h2>
@@ -272,6 +274,16 @@
       <tr><td>Onboarding: Upload your passwords</td><td class="num">7</td><td class="num">4</td><td class="num">1</td><td class="num">57%</td></tr>
     </table>
     <p>Upload your passwords is the only click. Chrome extension is the drop-off. 10 of 28 never received D0 — including 3 of the 10 who later started a trial.</p>
+
+    <h3>Setup Instructions · in-app “send me desktop instructions”</h3>
+    <p class="sub">Live flow Setup Instructions, triggered by Klaviyo metric Setup Instruction. This is not the D0 onboarding email. Subject: “Setup Instructions for Browser Extension.”</p>
+    <table>
+      <tr><th></th><th class="num">People of 28</th><th class="num">Events</th><th class="num">Opened</th><th class="num">Clicked</th></tr>
+      <tr><td>In-app tap · email_me_download_instructions</td><td class="num">2</td><td class="num">3</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>Klaviyo Setup Instruction event</td><td class="num">2</td><td class="num">11</td><td class="num">—</td><td class="num">—</td></tr>
+      <tr><td>Setup Instructions email delivered</td><td class="num">1</td><td class="num">9</td><td class="num">0</td><td class="num">0</td></tr>
+    </table>
+    <p>12 people tapped Connect with computer; only 2 asked to be emailed the steps. One of those two got nine copies of the same email and opened none. The other is subscribed and received nothing. The tap is only a GA button_interaction today — it should also be a named app event (setup_instruction) with platform, so we can see who asked for help and whether the email fired.</p>
 
     <h3>L8-10 Daily Cybersecurity Questions</h3>
     <p class="sub">Live overlay on the same Account Registration people. 4:00pm local, one email a day. 12 of 28 received at least one. 2 opened. 0 clicked. Only the first two questions have gone out this week.</p>
