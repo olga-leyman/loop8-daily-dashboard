@@ -20,7 +20,7 @@ async function load() {
   };
 
   row(document.getElementById("stats"), [
-    ["$" + paid.spend_50pct, "Spend · 50%"],
+    ["$" + paid.spend_50pct, "Spend"],
     [p.app_installs, "App installs"],
     [p.registrations_android, "Accounts · Android"],
     [p.registrations_ios, "Accounts · iOS"],

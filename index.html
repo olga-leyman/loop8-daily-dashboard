@@ -28,7 +28,7 @@
       <b>Watch</b>
       <ul class="alerts" id="alerts"></ul>
     </div>
-    <p class="note">Product numbers are Klaviyo. Spend / CPA / CPI are shown at 50% of platform cost. The dashboard refreshes every morning from Klaviyo; paid-ads mix stays on the weekly report until the next pull.</p>
+    <p class="note">Product numbers are Klaviyo. The dashboard refreshes every morning from Klaviyo; paid-ads mix stays on the weekly report until the next pull.</p>
   </div>
   <script>
     const money = (n) => n == null ? "—" : "$" + Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -49,7 +49,7 @@
           new Date(d.updated_at).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
         const p = d.product || {};
         const s = document.getElementById("stats");
-        stat(s, money(p.spend_50pct), "Spend · 50%");
+        stat(s, money(p.spend_50pct), "Spend");
         stat(s, p.installs, "App installs");
         stat(s, p.registrations_android, "Account registrations · Android");
         stat(s, p.registrations_ios, "Account registrations · iOS");
