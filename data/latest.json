@@ -1,52 +1,52 @@
 {
-  "updated_at": "2026-09-15T18:48:57Z",
+  "updated_at": "2026-09-16T18:46:48Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 11\u2013Sep 15, 2026",
-    "start": "2026-09-11",
-    "end": "2026-09-15"
+    "label": "Sep 12\u2013Sep 16, 2026",
+    "start": "2026-09-12",
+    "end": "2026-09-16"
   },
   "product": {
     "spend_50pct": 624,
     "cpa_50pct": 22,
     "cpi_50pct": 7.7,
-    "installs": 100,
-    "registrations": 35,
+    "installs": 114,
+    "registrations": 42,
     "registrations_android": 23,
     "registrations_ios": 5,
-    "trials": 11,
+    "trials": 10,
     "desktop_sync": 0,
     "password_import": 1,
-    "tru8_usernames": 9,
+    "tru8_usernames": 13,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 35
+    "install_to_account_pct": 37
   },
   "funnel_of_28": [
     {
       "action": "Opened the app this week",
-      "people": 30,
-      "share": "86%"
+      "people": 37,
+      "share": "88%"
     },
     {
       "action": "Trial Granted",
-      "people": 11,
-      "share": "31%"
+      "people": 10,
+      "share": "24%"
     },
     {
       "action": "Privacy Mate scan completed",
       "people": 11,
-      "share": "31%"
+      "share": "26%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 9,
-      "share": "26%"
+      "people": 13,
+      "share": "31%"
     },
     {
       "action": "Recovery contact added",
       "people": 2,
-      "share": "6%"
+      "share": "5%"
     },
     {
       "action": "Application paired (desktop sync)",
@@ -56,16 +56,10 @@
     {
       "action": "Passwords Imported",
       "people": 1,
-      "share": "3%"
+      "share": "2%"
     }
   ],
   "daily": [
-    {
-      "day": "Fri 9/11",
-      "installs": 16,
-      "registrations": 7,
-      "trials": 2
-    },
     {
       "day": "Sat 9/12",
       "installs": 25,
@@ -80,25 +74,31 @@
     },
     {
       "day": "Mon 9/14",
-      "installs": 31,
+      "installs": 32,
       "registrations": 11,
       "trials": 4
     },
     {
       "day": "Tue 9/15",
-      "installs": 5,
-      "registrations": 1,
+      "installs": 25,
+      "registrations": 10,
+      "trials": 1
+    },
+    {
+      "day": "Wed 9/16",
+      "installs": 9,
+      "registrations": 5,
       "trials": 1
     }
   ],
   "email_push": {
     "l8_01_delivered": 1,
-    "onboarding_received_people": 26,
-    "onboarding_opened_people": 12,
-    "onboarding_clicked_people": 1,
-    "trial_email_opened": 1,
+    "onboarding_received_people": 38,
+    "onboarding_opened_people": 17,
+    "onboarding_clicked_people": 3,
+    "trial_email_opened": 3,
     "push_opened": 0,
-    "no_live_email": 9
+    "no_live_email": 4
   },
   "alerts": [
     "Desktop sync is still almost unused.",
