@@ -111,10 +111,10 @@ td.num, th.num { text-align: right; }
   height: 200px;
   border-radius: 50%;
   background: conic-gradient(
-    #2f6f6a 0 74.7%,
-    #5c6563 74.7% 89%,
-    #c4a265 89% 96.6%,
-    #d9c4a0 96.6% 100%
+    #2f6f6a 0 69.2%,
+    #5c6563 69.2% 90.7%,
+    #c4a265 90.7% 97.1%,
+    #d9c4a0 97.1% 100%
   );
   display: grid;
   place-items: center;

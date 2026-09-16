@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh data/latest.json from Klaviyo for the last 5 Pacific days."""
+"""Refresh data/latest.json from Klaviyo from WINDOW_START through today Pacific."""
 
 from __future__ import annotations
 
@@ -96,8 +96,9 @@ def main() -> None:
         raise SystemExit("KLAVIYO_API_KEY is not set")
 
     now = datetime.now(PT)
+    start_env = os.environ.get("WINDOW_START", "2026-09-10")
+    start_day = datetime.fromisoformat(start_env).date()
     end_day = now.date() + timedelta(days=1)
-    start_day = now.date() - timedelta(days=4)
     start = iso_pt_midnight(start_day)
     end = iso_pt_midnight(end_day)
 
@@ -179,14 +180,11 @@ def main() -> None:
     ios = 0
     android = 0
     for ev in regs:
-        plat = (props(ev).get("Platform") or props(ev).get("OS Name") or "").lower()
-        if "ios" in plat or "iphone" in plat:
+        src = (props(ev).get("custom_source") or props(ev).get("Platform") or props(ev).get("OS Name") or "").lower()
+        if src == "ios" or "ios" in src or "iphone" in src:
             ios += 1
-        elif "android" in plat:
+        elif src == "android" or "android" in src:
             android += 1
-    if android + ios != len(reg_ids):
-        android = prev_product.get("registrations_android", android)
-        ios = prev_product.get("registrations_ios", len(reg_ids) - android)
 
     alerts = []
     if len({pid(ev) for ev in imported if pid(ev) in reg_ids}) == 0:
@@ -224,7 +222,7 @@ def main() -> None:
             "cancels": prev_product.get("cancels", 0),
             "install_to_account_pct": round(100 * len(reg_ids) / max(1, len(installs))),
         },
-        "funnel_of_28": funnel,
+        "funnel": funnel,
         "daily": days,
         "email_push": {
             "l8_01_delivered": l801,

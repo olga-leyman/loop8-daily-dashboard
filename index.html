@@ -11,12 +11,12 @@
     <nav>
       <strong>Loop8</strong>
       <a class="active" href="index.html">Daily dashboard</a>
-      <a href="report.html">Sep 10–14 report</a>
+      <a href="report.html">Sep 10–16 report</a>
     </nav>
     <h1>Daily dashboard</h1>
     <p class="sub" id="meta">Loading…</p>
     <div class="stats" id="stats"></div>
-    <h2>Last 5 days</h2>
+    <h2>Sep 10–16</h2>
     <div class="bars" id="bars"></div>
     <div class="bar-label" id="bar-labels"></div>
     <table id="daily"></table>
@@ -28,7 +28,7 @@
       <b>Watch</b>
       <ul class="alerts" id="alerts"></ul>
     </div>
-    <p class="note">Product numbers are Klaviyo. The dashboard refreshes every morning from Klaviyo; paid-ads mix stays on the weekly report until the next pull.</p>
+    <p class="note">Product numbers are Klaviyo. Spend is the paid-ads total for this window. Wednesday 9/16 is through afternoon Pacific.</p>
   </div>
   <script>
     const money = (n) => n == null ? "—" : "$" + Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -80,7 +80,7 @@
 
         const ft = document.getElementById("funnel");
         ft.innerHTML = "<tr><th>Action</th><th class='num'>People</th><th class='num'>Share</th></tr>";
-        (d.funnel_of_28 || []).forEach((x) => {
+        (d.funnel || d.funnel_of_28 || []).forEach((x) => {
           ft.innerHTML += "<tr><td>" + x.action + "</td><td class='num'>" + x.people + "</td><td class='num'>" + x.share + "</td></tr>";
         });
 
@@ -89,7 +89,8 @@
         stat(em, e.l8_01_delivered, "Email → Registration delivered");
         stat(em, e.onboarding_received_people + " / " + p.registrations, "Got registration onboarding");
         stat(em, e.onboarding_opened_people, "Opened an onboarding email");
-        stat(em, e.trial_email_opened || e.push_opened, "Opened a trial email or push", true);
+        stat(em, e.trial_email_opened, "Opened a trial email", e.trial_email_opened === 0);
+        stat(em, e.push_opened, "Opened a push", e.push_opened === 0);
 
         const ul = document.getElementById("alerts");
         (d.alerts || []).forEach((a) => {
