@@ -124,20 +124,37 @@ def main() -> None:
         dt = datetime.fromisoformat(ev["attributes"]["datetime"].replace("Z", "+00:00")).astimezone(PT)
         return dt.strftime("%a") + f" {dt.month}/{dt.day}"
 
-    daily_map: dict[str, dict] = defaultdict(lambda: {"installs": 0, "registrations": 0, "trials": 0})
+    daily_map: dict[str, dict] = defaultdict(
+        lambda: {"installs": 0, "registrations": 0, "trials": 0, "tru8": 0}
+    )
     for ev in installs:
         daily_map[day_key(ev)]["installs"] += 1
     for ev in regs:
         daily_map[day_key(ev)]["registrations"] += 1
     for ev in trials:
         daily_map[day_key(ev)]["trials"] += 1
+    for ev in tru8:
+        daily_map[day_key(ev)]["tru8"] += 1
 
     days = []
     cursor = start_day
     while cursor < end_day:
         label = datetime(cursor.year, cursor.month, cursor.day).strftime("%a") + f" {cursor.month}/{cursor.day}"
-        row = daily_map.get(label, {"installs": 0, "registrations": 0, "trials": 0})
-        days.append({"day": label, "installs": row["installs"], "registrations": row["registrations"], "trials": row["trials"]})
+        if cursor == now.date():
+            label += "*"
+        row = daily_map.get(
+            datetime(cursor.year, cursor.month, cursor.day).strftime("%a") + f" {cursor.month}/{cursor.day}",
+            {"installs": 0, "registrations": 0, "trials": 0, "tru8": 0},
+        )
+        days.append(
+            {
+                "day": label,
+                "installs": row["installs"],
+                "registrations": row["registrations"],
+                "trials": row["trials"],
+                "tru8": row["tru8"],
+            }
+        )
         cursor += timedelta(days=1)
 
     def people_in(events, flow=None):

@@ -11,12 +11,12 @@
     <nav>
       <strong>Loop8</strong>
       <a class="active" href="index.html">Daily dashboard</a>
-      <a href="report.html">Sep 10–16 report</a>
+      <a href="report.html">Weekly report</a>
     </nav>
     <h1>Daily dashboard</h1>
     <p class="sub" id="meta">Loading…</p>
     <div class="stats" id="stats"></div>
-    <h2>Sep 10–16</h2>
+    <h2 id="daily-heading">Daily breakdown</h2>
     <div class="bars" id="bars"></div>
     <div class="bar-label" id="bar-labels"></div>
     <table id="daily"></table>
@@ -28,7 +28,7 @@
       <b>Watch</b>
       <ul class="alerts" id="alerts"></ul>
     </div>
-    <p class="note">Product numbers are Klaviyo. Spend is the paid-ads total for this window. Wednesday 9/16 is through afternoon Pacific.</p>
+    <p class="note">Product numbers are Klaviyo. Spend is the last paid-ads total saved on this page. The starred day is today, through the last refresh.</p>
   </div>
   <script>
     const money = (n) => n == null ? "—" : "$" + Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -40,11 +40,13 @@
       d.querySelector("span").textContent = label;
       el.appendChild(d);
     }
-    fetch("data/latest.json")
+    fetch("data/latest.json?t=" + Date.now(), { cache: "no-store" })
       .then((r) => r.json())
       .then((d) => {
+        const windowLabel = d.window && d.window.label ? d.window.label : "";
+        document.getElementById("daily-heading").textContent = windowLabel || "Daily breakdown";
         document.getElementById("meta").textContent =
-          (d.window && d.window.label ? d.window.label : "") +
+          windowLabel +
           " · Pacific · updated " +
           new Date(d.updated_at).toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
         const p = d.product || {};
@@ -69,13 +71,13 @@
           b.innerHTML = "<span>" + x.installs + "</span>";
           bars.appendChild(b);
           const l = document.createElement("span");
-          l.textContent = x.day.replace(/ .*/, "");
+          l.textContent = String(x.day || "").replace(/\*.*/, "").replace(/ .*/, "");
           labels.appendChild(l);
         });
         const dt = document.getElementById("daily");
-        dt.innerHTML = "<tr><th>Day</th><th class='num'>Installs</th><th class='num'>Registrations</th><th class='num'>Trials</th></tr>";
+        dt.innerHTML = "<tr><th>Day</th><th class='num'>Installs</th><th class='num'>Registrations</th><th class='num'>Trials</th><th class='num'>Tru8 username</th></tr>";
         days.forEach((x) => {
-          dt.innerHTML += "<tr><td>" + x.day + "</td><td class='num'>" + x.installs + "</td><td class='num'>" + x.registrations + "</td><td class='num'>" + x.trials + "</td></tr>";
+          dt.innerHTML += "<tr><td>" + x.day + "</td><td class='num'>" + x.installs + "</td><td class='num'>" + x.registrations + "</td><td class='num'>" + x.trials + "</td><td class='num'>" + (x.tru8 ?? 0) + "</td></tr>";
         });
 
         const ft = document.getElementById("funnel");

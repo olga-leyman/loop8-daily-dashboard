@@ -45,7 +45,7 @@ async function load() {
   document.getElementById("daily-rows").innerHTML = d.daily
     .map(
       (x) =>
-        `<tr><td>${x.label}</td><td class="num">${x.installs}</td><td class="num">${x.registrations}</td><td class="num">${x.trials}</td></tr>`
+        `<tr><td>${x.day || x.label}</td><td class="num">${x.installs}</td><td class="num">${x.registrations}</td><td class="num">${x.trials}</td><td class="num">${x.tru8 ?? 0}</td></tr>`
     )
     .join("");
 

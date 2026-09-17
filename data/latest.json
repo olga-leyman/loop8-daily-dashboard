@@ -1,57 +1,57 @@
 {
-  "updated_at": "2026-09-16T22:00:00Z",
+  "updated_at": "2026-09-17T18:11:19Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10–Sep 16, 2026",
+    "label": "Sep 10\u2013Sep 17, 2026",
     "start": "2026-09-10",
-    "end": "2026-09-16"
+    "end": "2026-09-17"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 138,
-    "registrations": 50,
-    "registrations_android": 42,
+    "installs": 164,
+    "registrations": 58,
+    "registrations_android": 50,
     "registrations_ios": 8,
-    "trials": 13,
+    "trials": 14,
     "desktop_sync": 0,
     "password_import": 1,
-    "tru8_usernames": 14,
+    "tru8_usernames": 15,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 36
+    "install_to_account_pct": 35
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 44,
-      "share": "88%"
+      "people": 52,
+      "share": "90%"
     },
     {
       "action": "Trial Granted",
-      "people": 13,
-      "share": "26%"
+      "people": 14,
+      "share": "24%"
     },
     {
       "action": "Privacy Mate scan completed",
       "people": 15,
-      "share": "30%"
+      "share": "26%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 14,
-      "share": "28%"
+      "people": 15,
+      "share": "26%"
     },
     {
       "action": "Recovery contact added",
       "people": 2,
-      "share": "4%"
+      "share": "3%"
     },
     {
       "action": "Application paired (desktop sync)",
       "people": 0,
-      "share": "0%"
+      "share": "\u2014"
     },
     {
       "action": "Passwords Imported",
@@ -64,57 +64,69 @@
       "day": "Thu 9/10",
       "installs": 8,
       "registrations": 1,
-      "trials": 1
+      "trials": 1,
+      "tru8": 0
     },
     {
       "day": "Fri 9/11",
       "installs": 16,
       "registrations": 7,
-      "trials": 2
+      "trials": 2,
+      "tru8": 1
     },
     {
       "day": "Sat 9/12",
       "installs": 25,
       "registrations": 8,
-      "trials": 1
+      "trials": 1,
+      "tru8": 1
     },
     {
       "day": "Sun 9/13",
       "installs": 23,
       "registrations": 8,
-      "trials": 4
+      "trials": 4,
+      "tru8": 4
     },
     {
       "day": "Mon 9/14",
       "installs": 32,
       "registrations": 11,
-      "trials": 3
+      "trials": 4,
+      "tru8": 4
     },
     {
       "day": "Tue 9/15",
       "installs": 25,
       "registrations": 10,
-      "trials": 1
+      "trials": 1,
+      "tru8": 3
     },
     {
-      "day": "Wed 9/16*",
-      "installs": 9,
-      "registrations": 5,
-      "trials": 1
+      "day": "Wed 9/16",
+      "installs": 24,
+      "registrations": 9,
+      "trials": 1,
+      "tru8": 3
+    },
+    {
+      "day": "Thu 9/17*",
+      "installs": 11,
+      "registrations": 4,
+      "trials": 1,
+      "tru8": 0
     }
   ],
   "email_push": {
-    "l8_01_delivered": 1,
-    "onboarding_received_people": 39,
-    "onboarding_opened_people": 18,
+    "l8_01_delivered": 2,
+    "onboarding_received_people": 44,
+    "onboarding_opened_people": 20,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 3,
     "push_opened": 1,
-    "no_live_email": 11
+    "no_live_email": 14
   },
   "alerts": [
-    "Desktop sync is 0 among the 50 new accounts (3 existing users paired this window).",
-    "Password import is 1 of 50.",
-    "L8-01 Email to Registration delivered 1."
+    "Desktop sync is still almost unused."
   ]
 }
