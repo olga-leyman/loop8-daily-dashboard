@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T16:51:15Z",
+  "updated_at": "2026-09-19T19:01:23Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Sep 19, 2026",
@@ -10,7 +10,7 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 226,
+    "installs": 227,
     "registrations": 88,
     "registrations_android": 77,
     "registrations_ios": 11,
@@ -35,8 +35,8 @@
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 27,
-      "share": "31%"
+      "people": 28,
+      "share": "32%"
     },
     {
       "action": "Tru8 Connect profile created",
@@ -125,7 +125,7 @@
     },
     {
       "day": "Sat 9/19*",
-      "installs": 15,
+      "installs": 16,
       "registrations": 3,
       "trials": 0,
       "tru8": 1
