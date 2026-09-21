@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T18:57:20Z",
+  "updated_at": "2026-09-21T22:52:47Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Sep 21, 2026",
@@ -10,9 +10,9 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 298,
-    "registrations": 121,
-    "registrations_android": 107,
+    "installs": 301,
+    "registrations": 122,
+    "registrations_android": 108,
     "registrations_ios": 14,
     "trials": 33,
     "desktop_sync": 0,
@@ -25,7 +25,7 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 112,
+      "people": 113,
       "share": "93%"
     },
     {
@@ -139,8 +139,8 @@
     },
     {
       "day": "Mon 9/21*",
-      "installs": 16,
-      "registrations": 7,
+      "installs": 19,
+      "registrations": 8,
       "trials": 2,
       "tru8": 2
     }
@@ -152,7 +152,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 1,
-    "no_live_email": 77
+    "no_live_email": 78
   },
   "alerts": [
     "Desktop sync is still almost unused."
