@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-22T22:27:44Z",
+  "updated_at": "2026-09-23T18:00:40Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Sep 22, 2026",
+    "label": "Sep 10\u2013Sep 23, 2026",
     "start": "2026-09-10",
-    "end": "2026-09-22"
+    "end": "2026-09-23"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 331,
-    "registrations": 136,
-    "registrations_android": 119,
+    "installs": 350,
+    "registrations": 143,
+    "registrations_android": 126,
     "registrations_ios": 17,
-    "trials": 35,
+    "trials": 36,
     "desktop_sync": 1,
     "password_import": 3,
     "tru8_usernames": 35,
@@ -25,28 +25,28 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 125,
+      "people": 132,
       "share": "92%"
     },
     {
       "action": "Trial Granted",
-      "people": 35,
-      "share": "26%"
+      "people": 36,
+      "share": "25%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 37,
+      "people": 38,
       "share": "27%"
     },
     {
       "action": "Tru8 Connect profile created",
       "people": 35,
-      "share": "26%"
+      "share": "24%"
     },
     {
       "action": "Recovery contact added",
-      "people": 3,
-      "share": "2%"
+      "people": 4,
+      "share": "3%"
     },
     {
       "action": "Application paired (desktop sync)",
@@ -145,21 +145,28 @@
       "tru8": 2
     },
     {
-      "day": "Tue 9/22*",
-      "installs": 14,
-      "registrations": 8,
+      "day": "Tue 9/22",
+      "installs": 17,
+      "registrations": 10,
       "trials": 1,
       "tru8": 3
+    },
+    {
+      "day": "Wed 9/23*",
+      "installs": 16,
+      "registrations": 5,
+      "trials": 1,
+      "tru8": 0
     }
   ],
   "email_push": {
     "l8_01_delivered": 5,
     "onboarding_received_people": 44,
-    "onboarding_opened_people": 21,
+    "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 2,
-    "no_live_email": 92
+    "no_live_email": 99
   },
   "alerts": [
     "Desktop sync is still almost unused."
