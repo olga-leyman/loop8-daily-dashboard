@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T18:00:40Z",
+  "updated_at": "2026-09-23T22:30:56Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Sep 23, 2026",
@@ -10,9 +10,9 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 350,
-    "registrations": 143,
-    "registrations_android": 126,
+    "installs": 361,
+    "registrations": 146,
+    "registrations_android": 129,
     "registrations_ios": 17,
     "trials": 36,
     "desktop_sync": 1,
@@ -20,12 +20,12 @@
     "tru8_usernames": 35,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 41
+    "install_to_account_pct": 40
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 132,
+      "people": 135,
       "share": "92%"
     },
     {
@@ -36,7 +36,7 @@
     {
       "action": "Privacy Mate scan completed",
       "people": 38,
-      "share": "27%"
+      "share": "26%"
     },
     {
       "action": "Tru8 Connect profile created",
@@ -139,7 +139,7 @@
     },
     {
       "day": "Mon 9/21",
-      "installs": 33,
+      "installs": 34,
       "registrations": 14,
       "trials": 3,
       "tru8": 2
@@ -153,20 +153,20 @@
     },
     {
       "day": "Wed 9/23*",
-      "installs": 16,
-      "registrations": 5,
+      "installs": 26,
+      "registrations": 8,
       "trials": 1,
       "tru8": 0
     }
   ],
   "email_push": {
-    "l8_01_delivered": 5,
+    "l8_01_delivered": 6,
     "onboarding_received_people": 44,
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 2,
-    "no_live_email": 99
+    "no_live_email": 102
   },
   "alerts": [
     "Desktop sync is still almost unused."
