@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-09-25T22:52:22Z",
+  "updated_at": "2026-09-26T17:26:35Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Sep 25, 2026",
+    "label": "Sep 10\u2013Sep 26, 2026",
     "start": "2026-09-10",
-    "end": "2026-09-25"
+    "end": "2026-09-26"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 420,
-    "registrations": 165,
-    "registrations_android": 145,
+    "installs": 441,
+    "registrations": 172,
+    "registrations_android": 152,
     "registrations_ios": 20,
-    "trials": 43,
+    "trials": 46,
     "desktop_sync": 1,
     "password_import": 3,
-    "tru8_usernames": 41,
+    "tru8_usernames": 42,
     "paid_plans": 0,
     "cancels": 1,
     "install_to_account_pct": 39
@@ -25,23 +25,23 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 152,
+      "people": 159,
       "share": "92%"
     },
     {
       "action": "Trial Granted",
-      "people": 43,
-      "share": "26%"
+      "people": 46,
+      "share": "27%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 43,
+      "people": 45,
       "share": "26%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 41,
-      "share": "25%"
+      "people": 42,
+      "share": "24%"
     },
     {
       "action": "Recovery contact added",
@@ -166,11 +166,18 @@
       "tru8": 3
     },
     {
-      "day": "Fri 9/25*",
-      "installs": 28,
-      "registrations": 7,
-      "trials": 1,
+      "day": "Fri 9/25",
+      "installs": 32,
+      "registrations": 10,
+      "trials": 2,
       "tru8": 2
+    },
+    {
+      "day": "Sat 9/26*",
+      "installs": 17,
+      "registrations": 4,
+      "trials": 2,
+      "tru8": 1
     }
   ],
   "email_push": {
@@ -180,7 +187,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 4,
-    "no_live_email": 121
+    "no_live_email": 128
   },
   "alerts": [
     "Desktop sync is still almost unused."
