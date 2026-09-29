@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T18:56:18Z",
+  "updated_at": "2026-09-29T23:15:07Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Sep 29, 2026",
@@ -10,13 +10,13 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 521,
-    "registrations": 198,
-    "registrations_android": 173,
-    "registrations_ios": 25,
-    "trials": 64,
-    "desktop_sync": 1,
-    "password_import": 3,
+    "installs": 525,
+    "registrations": 200,
+    "registrations_android": 174,
+    "registrations_ios": 26,
+    "trials": 66,
+    "desktop_sync": 2,
+    "password_import": 4,
     "tru8_usernames": 50,
     "paid_plans": 0,
     "cancels": 1,
@@ -25,17 +25,17 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 182,
+      "people": 184,
       "share": "92%"
     },
     {
       "action": "Trial Granted",
-      "people": 64,
-      "share": "32%"
+      "people": 66,
+      "share": "33%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 55,
+      "people": 56,
       "share": "28%"
     },
     {
@@ -46,16 +46,16 @@
     {
       "action": "Recovery contact added",
       "people": 5,
-      "share": "3%"
+      "share": "2%"
     },
     {
       "action": "Application paired (desktop sync)",
-      "people": 1,
+      "people": 2,
       "share": "\u2014"
     },
     {
       "action": "Passwords Imported",
-      "people": 3,
+      "people": 4,
       "share": "2%"
     }
   ],
@@ -195,9 +195,9 @@
     },
     {
       "day": "Tue 9/29*",
-      "installs": 12,
-      "registrations": 4,
-      "trials": 4,
+      "installs": 16,
+      "registrations": 6,
+      "trials": 6,
       "tru8": 1
     }
   ],
@@ -208,9 +208,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 5,
-    "no_live_email": 154
+    "no_live_email": 156
   },
-  "alerts": [
-    "Desktop sync is still almost unused."
-  ]
+  "alerts": []
 }
