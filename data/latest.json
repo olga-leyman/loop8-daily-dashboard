@@ -1,47 +1,47 @@
 {
-  "updated_at": "2026-10-02T23:20:59Z",
+  "updated_at": "2026-10-03T17:41:50Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 2, 2026",
+    "label": "Sep 10\u2013Oct 3, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-02"
+    "end": "2026-10-03"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 561,
-    "registrations": 210,
-    "registrations_android": 180,
-    "registrations_ios": 30,
-    "trials": 76,
+    "installs": 568,
+    "registrations": 215,
+    "registrations_android": 183,
+    "registrations_ios": 32,
+    "trials": 81,
     "desktop_sync": 2,
     "password_import": 4,
-    "tru8_usernames": 53,
+    "tru8_usernames": 56,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 37
+    "install_to_account_pct": 38
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 194,
+      "people": 197,
       "share": "92%"
     },
     {
       "action": "Trial Granted",
-      "people": 76,
-      "share": "36%"
+      "people": 81,
+      "share": "38%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 59,
-      "share": "28%"
+      "people": 62,
+      "share": "29%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 53,
-      "share": "25%"
+      "people": 56,
+      "share": "26%"
     },
     {
       "action": "Recovery contact added",
@@ -215,21 +215,28 @@
       "tru8": 0
     },
     {
-      "day": "Fri 10/2*",
-      "installs": 12,
-      "registrations": 5,
-      "trials": 5,
-      "tru8": 3
+      "day": "Fri 10/2",
+      "installs": 14,
+      "registrations": 6,
+      "trials": 6,
+      "tru8": 4
+    },
+    {
+      "day": "Sat 10/3*",
+      "installs": 5,
+      "registrations": 4,
+      "trials": 4,
+      "tru8": 2
     }
   ],
   "email_push": {
-    "l8_01_delivered": 11,
+    "l8_01_delivered": 13,
     "onboarding_received_people": 44,
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
-    "push_opened": 6,
-    "no_live_email": 166
+    "push_opened": 7,
+    "no_live_email": 171
   },
   "alerts": []
 }
