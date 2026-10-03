@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T17:41:50Z",
+  "updated_at": "2026-10-03T22:29:40Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 3, 2026",
@@ -235,7 +235,7 @@
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
-    "push_opened": 7,
+    "push_opened": 8,
     "no_live_email": 171
   },
   "alerts": []
