@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-10-03T22:29:40Z",
+  "updated_at": "2026-10-04T17:54:01Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 3, 2026",
+    "label": "Sep 10\u2013Oct 4, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-03"
+    "end": "2026-10-04"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 568,
-    "registrations": 215,
+    "installs": 575,
+    "registrations": 216,
     "registrations_android": 183,
-    "registrations_ios": 32,
-    "trials": 81,
+    "registrations_ios": 33,
+    "trials": 83,
     "desktop_sync": 2,
-    "password_import": 4,
+    "password_import": 5,
     "tru8_usernames": 56,
     "paid_plans": 0,
     "cancels": 1,
@@ -26,17 +26,17 @@
     {
       "action": "Opened the app this week",
       "people": 197,
-      "share": "92%"
+      "share": "91%"
     },
     {
       "action": "Trial Granted",
-      "people": 81,
+      "people": 83,
       "share": "38%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 62,
-      "share": "29%"
+      "people": 64,
+      "share": "30%"
     },
     {
       "action": "Tru8 Connect profile created",
@@ -55,7 +55,7 @@
     },
     {
       "action": "Passwords Imported",
-      "people": 4,
+      "people": 5,
       "share": "2%"
     }
   ],
@@ -132,7 +132,7 @@
     },
     {
       "day": "Sun 9/20",
-      "installs": 41,
+      "installs": 42,
       "registrations": 19,
       "trials": 7,
       "tru8": 5
@@ -160,7 +160,7 @@
     },
     {
       "day": "Thu 9/24",
-      "installs": 21,
+      "installs": 23,
       "registrations": 7,
       "trials": 5,
       "tru8": 3
@@ -216,27 +216,34 @@
     },
     {
       "day": "Fri 10/2",
-      "installs": 14,
+      "installs": 15,
       "registrations": 6,
       "trials": 6,
       "tru8": 4
     },
     {
-      "day": "Sat 10/3*",
+      "day": "Sat 10/3",
       "installs": 5,
       "registrations": 4,
-      "trials": 4,
+      "trials": 5,
       "tru8": 2
+    },
+    {
+      "day": "Sun 10/4*",
+      "installs": 3,
+      "registrations": 1,
+      "trials": 1,
+      "tru8": 0
     }
   ],
   "email_push": {
-    "l8_01_delivered": 13,
+    "l8_01_delivered": 14,
     "onboarding_received_people": 44,
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 8,
-    "no_live_email": 171
+    "no_live_email": 172
   },
   "alerts": []
 }
