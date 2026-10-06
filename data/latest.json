@@ -1,36 +1,36 @@
 {
-  "updated_at": "2026-10-05T21:26:43Z",
+  "updated_at": "2026-10-06T19:10:14Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 5, 2026",
+    "label": "Sep 10\u2013Oct 6, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-05"
+    "end": "2026-10-06"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 584,
-    "registrations": 220,
-    "registrations_android": 185,
+    "installs": 591,
+    "registrations": 221,
+    "registrations_android": 186,
     "registrations_ios": 35,
-    "trials": 87,
+    "trials": 88,
     "desktop_sync": 3,
     "password_import": 6,
     "tru8_usernames": 57,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 38
+    "install_to_account_pct": 37
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 200,
+      "people": 201,
       "share": "91%"
     },
     {
       "action": "Trial Granted",
-      "people": 87,
+      "people": 88,
       "share": "40%"
     },
     {
@@ -236,8 +236,15 @@
       "tru8": 1
     },
     {
-      "day": "Mon 10/5*",
-      "installs": 3,
+      "day": "Mon 10/5",
+      "installs": 6,
+      "registrations": 1,
+      "trials": 1,
+      "tru8": 0
+    },
+    {
+      "day": "Tue 10/6*",
+      "installs": 4,
       "registrations": 0,
       "trials": 0,
       "tru8": 0
@@ -250,7 +257,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 10,
-    "no_live_email": 176
+    "no_live_email": 177
   },
   "alerts": []
 }
