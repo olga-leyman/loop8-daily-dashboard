@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-10-06T23:24:07Z",
+  "updated_at": "2026-10-07T19:38:19Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 6, 2026",
+    "label": "Sep 10\u2013Oct 7, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-06"
+    "end": "2026-10-07"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 594,
+    "installs": 607,
     "registrations": 222,
     "registrations_android": 186,
     "registrations_ios": 36,
@@ -243,11 +243,18 @@
       "tru8": 0
     },
     {
-      "day": "Tue 10/6*",
-      "installs": 5,
+      "day": "Tue 10/6",
+      "installs": 8,
       "registrations": 1,
       "trials": 1,
       "tru8": 0
+    },
+    {
+      "day": "Wed 10/7*",
+      "installs": 10,
+      "registrations": 0,
+      "trials": 0,
+      "tru8": 1
     }
   ],
   "email_push": {
