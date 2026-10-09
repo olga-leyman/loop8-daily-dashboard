@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T19:07:23Z",
+  "updated_at": "2026-10-09T23:39:07Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 9, 2026",
@@ -10,11 +10,11 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 627,
-    "registrations": 233,
-    "registrations_android": 195,
+    "installs": 631,
+    "registrations": 235,
+    "registrations_android": 197,
     "registrations_ios": 38,
-    "trials": 100,
+    "trials": 102,
     "desktop_sync": 4,
     "password_import": 7,
     "tru8_usernames": 60,
@@ -25,17 +25,17 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 212,
+      "people": 215,
       "share": "91%"
     },
     {
       "action": "Trial Granted",
-      "people": 100,
+      "people": 102,
       "share": "43%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 70,
+      "people": 71,
       "share": "30%"
     },
     {
@@ -265,9 +265,9 @@
     },
     {
       "day": "Fri 10/9*",
-      "installs": 13,
-      "registrations": 9,
-      "trials": 9,
+      "installs": 17,
+      "registrations": 11,
+      "trials": 11,
       "tru8": 2
     }
   ],
@@ -278,7 +278,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 11,
-    "no_live_email": 189
+    "no_live_email": 191
   },
   "alerts": []
 }
