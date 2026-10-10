@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T18:07:30Z",
+  "updated_at": "2026-10-10T23:01:58Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 10, 2026",
@@ -10,11 +10,11 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 642,
-    "registrations": 238,
-    "registrations_android": 199,
-    "registrations_ios": 39,
-    "trials": 105,
+    "installs": 652,
+    "registrations": 241,
+    "registrations_android": 200,
+    "registrations_ios": 41,
+    "trials": 108,
     "desktop_sync": 4,
     "password_import": 7,
     "tru8_usernames": 61,
@@ -25,23 +25,23 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 218,
-      "share": "92%"
+      "people": 220,
+      "share": "91%"
     },
     {
       "action": "Trial Granted",
-      "people": 105,
-      "share": "44%"
+      "people": 108,
+      "share": "45%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 72,
-      "share": "30%"
+      "people": 74,
+      "share": "31%"
     },
     {
       "action": "Tru8 Connect profile created",
       "people": 61,
-      "share": "26%"
+      "share": "25%"
     },
     {
       "action": "Recovery contact added",
@@ -272,9 +272,9 @@
     },
     {
       "day": "Sat 10/10*",
-      "installs": 6,
-      "registrations": 2,
-      "trials": 2,
+      "installs": 16,
+      "registrations": 5,
+      "trials": 5,
       "tru8": 0
     }
   ],
@@ -285,7 +285,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 11,
-    "no_live_email": 194
+    "no_live_email": 197
   },
   "alerts": []
 }
