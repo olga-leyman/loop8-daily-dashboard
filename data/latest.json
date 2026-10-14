@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T18:14:52Z",
+  "updated_at": "2026-10-14T22:46:23Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 14, 2026",
@@ -10,11 +10,11 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 734,
-    "registrations": 272,
-    "registrations_android": 212,
+    "installs": 736,
+    "registrations": 273,
+    "registrations_android": 213,
     "registrations_ios": 60,
-    "trials": 139,
+    "trials": 140,
     "desktop_sync": 5,
     "password_import": 7,
     "tru8_usernames": 69,
@@ -25,12 +25,12 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 243,
+      "people": 244,
       "share": "89%"
     },
     {
       "action": "Trial Granted",
-      "people": 139,
+      "people": 140,
       "share": "51%"
     },
     {
@@ -300,9 +300,9 @@
     },
     {
       "day": "Wed 10/14*",
-      "installs": 12,
-      "registrations": 2,
-      "trials": 2,
+      "installs": 14,
+      "registrations": 3,
+      "trials": 3,
       "tru8": 2
     }
   ],
@@ -313,7 +313,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 11,
-    "no_live_email": 228
+    "no_live_email": 229
   },
   "alerts": []
 }
