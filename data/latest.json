@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-10-13T23:36:52Z",
+  "updated_at": "2026-10-14T18:14:52Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 13, 2026",
+    "label": "Sep 10\u2013Oct 14, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-13"
+    "end": "2026-10-14"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 714,
-    "registrations": 265,
-    "registrations_android": 210,
-    "registrations_ios": 55,
-    "trials": 132,
-    "desktop_sync": 4,
+    "installs": 734,
+    "registrations": 272,
+    "registrations_android": 212,
+    "registrations_ios": 60,
+    "trials": 139,
+    "desktop_sync": 5,
     "password_import": 7,
-    "tru8_usernames": 68,
+    "tru8_usernames": 69,
     "paid_plans": 0,
     "cancels": 1,
     "install_to_account_pct": 37
@@ -25,23 +25,23 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 237,
+      "people": 243,
       "share": "89%"
     },
     {
       "action": "Trial Granted",
-      "people": 132,
-      "share": "50%"
+      "people": 139,
+      "share": "51%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 85,
-      "share": "32%"
+      "people": 90,
+      "share": "33%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 68,
-      "share": "26%"
+      "people": 69,
+      "share": "25%"
     },
     {
       "action": "Recovery contact added",
@@ -50,7 +50,7 @@
     },
     {
       "action": "Application paired (desktop sync)",
-      "people": 4,
+      "people": 5,
       "share": "\u2014"
     },
     {
@@ -292,10 +292,17 @@
       "tru8": 1
     },
     {
-      "day": "Tue 10/13*",
-      "installs": 14,
-      "registrations": 8,
-      "trials": 8,
+      "day": "Tue 10/13",
+      "installs": 22,
+      "registrations": 13,
+      "trials": 13,
+      "tru8": 2
+    },
+    {
+      "day": "Wed 10/14*",
+      "installs": 12,
+      "registrations": 2,
+      "trials": 2,
       "tru8": 2
     }
   ],
@@ -306,7 +313,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 11,
-    "no_live_email": 221
+    "no_live_email": 228
   },
   "alerts": []
 }
