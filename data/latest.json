@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T17:44:50Z",
+  "updated_at": "2026-10-16T22:17:28Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 16, 2026",
@@ -10,7 +10,7 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 757,
+    "installs": 758,
     "registrations": 287,
     "registrations_android": 221,
     "registrations_ios": 66,
@@ -314,7 +314,7 @@
     },
     {
       "day": "Fri 10/16*",
-      "installs": 4,
+      "installs": 5,
       "registrations": 5,
       "trials": 5,
       "tru8": 0
