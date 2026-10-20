@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T18:11:50Z",
+  "updated_at": "2026-10-20T22:47:17Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 20, 2026",
@@ -11,16 +11,16 @@
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
     "installs": 834,
-    "registrations": 312,
-    "registrations_android": 240,
-    "registrations_ios": 72,
-    "trials": 178,
+    "registrations": 315,
+    "registrations_android": 241,
+    "registrations_ios": 74,
+    "trials": 179,
     "desktop_sync": 5,
     "password_import": 9,
-    "tru8_usernames": 78,
+    "tru8_usernames": 79,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 37
+    "install_to_account_pct": 38
   },
   "funnel": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "action": "Trial Granted",
-      "people": 178,
+      "people": 179,
       "share": "57%"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 78,
+      "people": 79,
       "share": "25%"
     },
     {
@@ -343,9 +343,9 @@
     {
       "day": "Tue 10/20*",
       "installs": 7,
-      "registrations": 2,
-      "trials": 1,
-      "tru8": 0
+      "registrations": 5,
+      "trials": 2,
+      "tru8": 1
     }
   ],
   "email_push": {
@@ -355,7 +355,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 12,
-    "no_live_email": 268
+    "no_live_email": 271
   },
   "alerts": []
 }
