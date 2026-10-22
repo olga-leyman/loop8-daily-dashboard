@@ -1,47 +1,47 @@
 {
-  "updated_at": "2026-10-21T22:52:18Z",
+  "updated_at": "2026-10-22T18:14:14Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 21, 2026",
+    "label": "Sep 10\u2013Oct 22, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-21"
+    "end": "2026-10-22"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 844,
-    "registrations": 317,
-    "registrations_android": 242,
-    "registrations_ios": 75,
-    "trials": 181,
+    "installs": 857,
+    "registrations": 320,
+    "registrations_android": 244,
+    "registrations_ios": 76,
+    "trials": 184,
     "desktop_sync": 6,
     "password_import": 9,
     "tru8_usernames": 81,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 38
+    "install_to_account_pct": 37
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 283,
+      "people": 285,
       "share": "89%"
     },
     {
       "action": "Trial Granted",
-      "people": 181,
-      "share": "57%"
+      "people": 184,
+      "share": "58%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 104,
+      "people": 105,
       "share": "33%"
     },
     {
       "action": "Tru8 Connect profile created",
       "people": 81,
-      "share": "26%"
+      "share": "25%"
     },
     {
       "action": "Recovery contact added",
@@ -348,11 +348,18 @@
       "tru8": 2
     },
     {
-      "day": "Wed 10/21*",
-      "installs": 3,
-      "registrations": 1,
-      "trials": 1,
+      "day": "Wed 10/21",
+      "installs": 7,
+      "registrations": 2,
+      "trials": 2,
       "tru8": 1
+    },
+    {
+      "day": "Thu 10/22*",
+      "installs": 9,
+      "registrations": 2,
+      "trials": 2,
+      "tru8": 0
     }
   ],
   "email_push": {
@@ -362,7 +369,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 12,
-    "no_live_email": 273
+    "no_live_email": 276
   },
   "alerts": []
 }
