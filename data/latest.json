@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-10-23T22:43:59Z",
+  "updated_at": "2026-10-24T17:05:35Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Oct 23, 2026",
+    "label": "Sep 10\u2013Oct 24, 2026",
     "start": "2026-09-10",
-    "end": "2026-10-23"
+    "end": "2026-10-24"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 875,
-    "registrations": 325,
-    "registrations_android": 245,
-    "registrations_ios": 80,
-    "trials": 189,
+    "installs": 883,
+    "registrations": 329,
+    "registrations_android": 248,
+    "registrations_ios": 81,
+    "trials": 193,
     "desktop_sync": 6,
     "password_import": 9,
-    "tru8_usernames": 82,
+    "tru8_usernames": 83,
     "paid_plans": 0,
     "cancels": 1,
     "install_to_account_pct": 37
@@ -25,22 +25,22 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 287,
+      "people": 290,
       "share": "88%"
     },
     {
       "action": "Trial Granted",
-      "people": 189,
-      "share": "58%"
+      "people": 193,
+      "share": "59%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 109,
+      "people": 111,
       "share": "34%"
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 82,
+      "people": 83,
       "share": "25%"
     },
     {
@@ -328,7 +328,7 @@
     },
     {
       "day": "Sun 10/18",
-      "installs": 21,
+      "installs": 22,
       "registrations": 10,
       "trials": 9,
       "tru8": 2
@@ -362,11 +362,18 @@
       "tru8": 1
     },
     {
-      "day": "Fri 10/23*",
-      "installs": 7,
+      "day": "Fri 10/23",
+      "installs": 8,
       "registrations": 2,
       "trials": 2,
       "tru8": 0
+    },
+    {
+      "day": "Sat 10/24*",
+      "installs": 6,
+      "registrations": 4,
+      "trials": 4,
+      "tru8": 1
     }
   ],
   "email_push": {
@@ -375,8 +382,8 @@
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
-    "push_opened": 13,
-    "no_live_email": 281
+    "push_opened": 14,
+    "no_live_email": 285
   },
   "alerts": []
 }
