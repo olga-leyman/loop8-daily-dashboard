@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T19:04:29Z",
+  "updated_at": "2026-10-27T23:19:14Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 27, 2026",
@@ -10,7 +10,7 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 920,
+    "installs": 921,
     "registrations": 345,
     "registrations_android": 252,
     "registrations_ios": 93,
@@ -20,7 +20,7 @@
     "tru8_usernames": 88,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 38
+    "install_to_account_pct": 37
   },
   "funnel": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 123,
+      "people": 124,
       "share": "36%"
     },
     {
@@ -391,7 +391,7 @@
     },
     {
       "day": "Tue 10/27*",
-      "installs": 10,
+      "installs": 11,
       "registrations": 4,
       "trials": 4,
       "tru8": 1
