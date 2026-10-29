@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T19:21:45Z",
+  "updated_at": "2026-10-29T23:42:14Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Oct 29, 2026",
@@ -10,11 +10,11 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 955,
-    "registrations": 362,
+    "installs": 956,
+    "registrations": 363,
     "registrations_android": 259,
-    "registrations_ios": 103,
-    "trials": 225,
+    "registrations_ios": 104,
+    "trials": 226,
     "desktop_sync": 8,
     "password_import": 11,
     "tru8_usernames": 92,
@@ -30,12 +30,12 @@
     },
     {
       "action": "Trial Granted",
-      "people": 225,
+      "people": 226,
       "share": "62%"
     },
     {
       "action": "Privacy Mate scan completed",
-      "people": 136,
+      "people": 137,
       "share": "38%"
     },
     {
@@ -405,9 +405,9 @@
     },
     {
       "day": "Thu 10/29*",
-      "installs": 10,
-      "registrations": 7,
-      "trials": 7,
+      "installs": 11,
+      "registrations": 8,
+      "trials": 8,
       "tru8": 2
     }
   ],
@@ -418,7 +418,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 15,
-    "no_live_email": 318
+    "no_live_email": 319
   },
   "alerts": []
 }
