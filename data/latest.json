@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T18:40:24Z",
+  "updated_at": "2026-11-01T23:14:11Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Nov 1, 2026",
@@ -10,7 +10,7 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 1002,
+    "installs": 1004,
     "registrations": 386,
     "registrations_android": 271,
     "registrations_ios": 115,
@@ -20,7 +20,7 @@
     "tru8_usernames": 106,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 39
+    "install_to_account_pct": 38
   },
   "funnel": [
     {
@@ -377,7 +377,7 @@
     },
     {
       "day": "Sun 10/25",
-      "installs": 6,
+      "installs": 7,
       "registrations": 3,
       "trials": 3,
       "tru8": 1
@@ -426,7 +426,7 @@
     },
     {
       "day": "Sun 11/1*",
-      "installs": 14,
+      "installs": 15,
       "registrations": 5,
       "trials": 5,
       "tru8": 4
