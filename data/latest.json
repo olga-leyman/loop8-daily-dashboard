@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:24:49Z",
+  "updated_at": "2026-11-07T23:12:10Z",
   "timezone": "America/Los_Angeles",
   "window": {
     "label": "Sep 10\u2013Nov 7, 2026",
@@ -10,11 +10,11 @@
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 1088,
-    "registrations": 420,
+    "installs": 1089,
+    "registrations": 421,
     "registrations_android": 280,
-    "registrations_ios": 140,
-    "trials": 282,
+    "registrations_ios": 141,
+    "trials": 283,
     "desktop_sync": 8,
     "password_import": 12,
     "tru8_usernames": 125,
@@ -30,7 +30,7 @@
     },
     {
       "action": "Trial Granted",
-      "people": 282,
+      "people": 283,
       "share": "67%"
     },
     {
@@ -468,9 +468,9 @@
     },
     {
       "day": "Sat 11/7*",
-      "installs": 3,
-      "registrations": 1,
-      "trials": 1,
+      "installs": 4,
+      "registrations": 2,
+      "trials": 2,
       "tru8": 0
     }
   ],
@@ -481,7 +481,7 @@
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 22,
-    "no_live_email": 376
+    "no_live_email": 377
   },
   "alerts": []
 }
