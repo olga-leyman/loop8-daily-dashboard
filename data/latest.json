@@ -1,23 +1,23 @@
 {
-  "updated_at": "2026-11-07T23:12:10Z",
+  "updated_at": "2026-11-08T18:36:04Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Nov 7, 2026",
+    "label": "Sep 10\u2013Nov 8, 2026",
     "start": "2026-09-10",
-    "end": "2026-11-07"
+    "end": "2026-11-08"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 1089,
-    "registrations": 421,
-    "registrations_android": 280,
-    "registrations_ios": 141,
-    "trials": 283,
+    "installs": 1092,
+    "registrations": 425,
+    "registrations_android": 281,
+    "registrations_ios": 144,
+    "trials": 286,
     "desktop_sync": 8,
     "password_import": 12,
-    "tru8_usernames": 125,
+    "tru8_usernames": 126,
     "paid_plans": 0,
     "cancels": 1,
     "install_to_account_pct": 39
@@ -25,12 +25,12 @@
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 356,
-      "share": "85%"
+      "people": 359,
+      "share": "84%"
     },
     {
       "action": "Trial Granted",
-      "people": 283,
+      "people": 286,
       "share": "67%"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 125,
+      "people": 126,
       "share": "30%"
     },
     {
@@ -467,11 +467,18 @@
       "tru8": 0
     },
     {
-      "day": "Sat 11/7*",
-      "installs": 4,
-      "registrations": 2,
-      "trials": 2,
+      "day": "Sat 11/7",
+      "installs": 5,
+      "registrations": 3,
+      "trials": 3,
       "tru8": 0
+    },
+    {
+      "day": "Sun 11/8*",
+      "installs": 2,
+      "registrations": 3,
+      "trials": 2,
+      "tru8": 1
     }
   ],
   "email_push": {
@@ -480,8 +487,8 @@
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
-    "push_opened": 22,
-    "no_live_email": 377
+    "push_opened": 23,
+    "no_live_email": 381
   },
   "alerts": []
 }
