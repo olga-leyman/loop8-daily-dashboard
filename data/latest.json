@@ -1,37 +1,37 @@
 {
-  "updated_at": "2026-11-24T23:21:37Z",
+  "updated_at": "2026-11-25T22:55:07Z",
   "timezone": "America/Los_Angeles",
   "window": {
-    "label": "Sep 10\u2013Nov 24, 2026",
+    "label": "Sep 10\u2013Nov 25, 2026",
     "start": "2026-09-10",
-    "end": "2026-11-24"
+    "end": "2026-11-25"
   },
   "product": {
     "spend_50pct": 1063,
     "cpa_50pct": 21,
     "cpi_50pct": 7.7,
-    "installs": 1777,
-    "registrations": 547,
+    "installs": 1810,
+    "registrations": 551,
     "registrations_android": 349,
-    "registrations_ios": 198,
-    "trials": 402,
+    "registrations_ios": 202,
+    "trials": 406,
     "desktop_sync": 10,
     "password_import": 13,
-    "tru8_usernames": 199,
+    "tru8_usernames": 200,
     "paid_plans": 0,
     "cancels": 1,
-    "install_to_account_pct": 31
+    "install_to_account_pct": 30
   },
   "funnel": [
     {
       "action": "Opened the app this week",
-      "people": 453,
+      "people": 455,
       "share": "83%"
     },
     {
       "action": "Trial Granted",
-      "people": 402,
-      "share": "73%"
+      "people": 406,
+      "share": "74%"
     },
     {
       "action": "Privacy Mate scan completed",
@@ -40,7 +40,7 @@
     },
     {
       "action": "Tru8 Connect profile created",
-      "people": 199,
+      "people": 200,
       "share": "36%"
     },
     {
@@ -586,21 +586,28 @@
       "tru8": 3
     },
     {
-      "day": "Tue 11/24*",
-      "installs": 25,
-      "registrations": 2,
-      "trials": 2,
+      "day": "Tue 11/24",
+      "installs": 35,
+      "registrations": 3,
+      "trials": 3,
       "tru8": 0
+    },
+    {
+      "day": "Wed 11/25*",
+      "installs": 23,
+      "registrations": 3,
+      "trials": 3,
+      "tru8": 1
     }
   ],
   "email_push": {
-    "l8_01_delivered": 22,
+    "l8_01_delivered": 23,
     "onboarding_received_people": 44,
     "onboarding_opened_people": 22,
     "onboarding_clicked_people": 3,
     "trial_email_opened": 10,
     "push_opened": 30,
-    "no_live_email": 503
+    "no_live_email": 507
   },
   "alerts": []
 }
